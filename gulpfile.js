@@ -36,7 +36,7 @@ const imgmin = () => {
   return src('source/img/**/*.{png,jpg,svg}')
     .pipe(imagemin([
       imagemin.optipng({ optimizationLevel: 3 }),
-      imagemin.mozjpeg({ quality: 94, progressive: true }),
+      imagemin.mozjpeg({ quality: 85, progressive: true }),
       imagemin.svgo()
     ]))
     .pipe(dest('build/img'));
@@ -44,12 +44,12 @@ const imgmin = () => {
 
 const imgwebp = () => {
   return src('source/img/content-*.{png,jpg}')
-    .pipe(webp({ quality: 90 }))
+    .pipe(webp({ quality: 76 }))
     .pipe(dest('build/img'));
 };
 
 const sprite = () => {
-  return src('source/img/inline-*.svg')
+  return src('source/img/icon-*.svg')
     .pipe(svgstore({ inlineSvg: true }))
     .pipe(rename('sprite.svg'))
     .pipe(dest('build/img'));
@@ -88,7 +88,7 @@ const watching = () => {
   watch('source/sass/**/*.scss', css);
   watch('source/*.html', series(html, refresh));
   watch('source/img/**/*.{png,jpg,svg}', series(cleanimg, copyimg, refresh));
-  watch('source/img/inline-*.svg', series(sprite, refresh));
+  watch('source/img/icon-*.svg', series(sprite, refresh));
   watch('source/js/*.js', series(mainjs, refresh));
   watch('source/js/libs/*.js', series(vendorjs, refresh));
 };
@@ -102,7 +102,7 @@ const copy = () => {
     'source/fonts/**/*.{woff,woff2}',
     'source/img/**/*.{png,jpg,svg}',
     'source/video/**/*.mp4',
-    '!source/img/**/inline-*.svg',
+    '!source/img/**/icon-*.svg',
     'source//*.ico'
   ], {
     base: 'source'
@@ -124,7 +124,7 @@ const copybuild = () => {
 const copyimg = () => {
   return src([
     'source/img/**/*.{png,jpg,svg}',
-    '!source/img/**/inline-*.svg'
+    '!source/img/**/icon-*.svg'
   ], {
     base: 'source'
   })
@@ -139,7 +139,7 @@ const cleanimg = () => {
 };
 
 const cleansvg = () => {
-  return del('build/img/**/inline-*.{png,jpg,svg}');
+  return del('build/img/**/icon-*.svg');
 };
 
 exports.css = css;

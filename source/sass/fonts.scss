@@ -1,19 +1,59 @@
 @font-face {
-  font-family: "Font";
+  font-family: "Raleway";
   font-style: normal;
   font-weight: 400;
   font-display: swap;
   src:
-    url("../fonts/font-400.woff2") format("woff2"),
-    url("../fonts/font-400.woff") format("woff");
+    url("../fonts/raleway-400.woff2") format("woff2"),
+    url("../fonts/raleway-400.woff") format("woff");
 }
 
 @font-face {
-  font-family: "Font";
+  font-family: "Raleway";
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src:
+    url("../fonts/raleway-500.woff2") format("woff2"),
+    url("../fonts/raleway-500.woff") format("woff");
+}
+
+@font-face {
+  font-family: "Raleway";
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src:
+    url("../fonts/raleway-600.woff2") format("woff2"),
+    url("../fonts/raleway-600.woff") format("woff");
+}
+
+@font-face {
+  font-family: "Raleway";
   font-style: normal;
   font-weight: 700;
   font-display: swap;
   src:
-    url("../fonts/font-700.woff2") format("woff2"),
-    url("../fonts/font-700.woff") format("woff");
+    url("../fonts/raleway-700.woff2") format("woff2"),
+    url("../fonts/raleway-700.woff") format("woff");
+}
+
+@font-face {
+  font-family: "Raleway";
+  font-style: normal;
+  font-weight: 800;
+  font-display: swap;
+  src:
+    url("../fonts/raleway-800.woff2") format("woff2"),
+    url("../fonts/raleway-800.woff") format("woff");
+}
+
+@font-face {
+  font-family: "Raleway";
+  font-style: normal;
+  font-weight: 900;
+  font-display: swap;
+  src:
+    url("../fonts/raleway-900.woff2") format("woff2"),
+    url("../fonts/raleway-900.woff") format("woff");
 }
