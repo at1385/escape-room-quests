@@ -177,3 +177,8 @@
   }
 }
 
+@media (max-width: $mobile-max-width) {
+  .page-header {
+    padding-top: 20px;
+  }
+}

@@ -20,3 +20,14 @@
   }
 }
 
+@media (max-width: $mobile-max-width) {
+  .site-logo {
+    width: 96px;
+    height: 36px;
+
+    svg {
+      width: 96px;
+      height: 36px;
+    }
+  }
+}
