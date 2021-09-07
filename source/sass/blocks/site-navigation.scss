@@ -26,3 +26,26 @@
   }
 }
 
+@media (max-width: $tablet-max-width) {
+  .site-navigation {
+    flex-direction: column;
+    width: 100%;
+    padding-top: 38px;
+
+    text-align: center;
+
+    li {
+      margin-right: 0;
+      margin-bottom: 37px;
+
+      &:last-child {
+        margin-right: 0;
+      }
+    }
+
+    a {
+      font-size: 16px;
+      line-height: 19px;
+    }
+  }
+}

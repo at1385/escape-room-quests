@@ -4,3 +4,8 @@
   width: 61%;
 }
 
+@media (max-width: $tablet-max-width) {
+  .main-navigation {
+    width: 100%;
+  }
+}

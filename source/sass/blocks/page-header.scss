@@ -92,3 +92,88 @@
   margin-left: 7%;
 }
 
+@media (max-width: $tablet-max-width) {
+  .js {
+    .page-header {
+      &--opened {
+        height: 100vh;
+      }
+    }
+  }
+
+  .page-header {
+    position: static;
+
+    flex-direction: column;
+    flex-wrap: wrap;
+
+    text-align: center;
+
+    background-image: linear-gradient(170.74deg, #633c0f -68.98%, #24150e 75.12%, #1a140d 132.97%);
+
+    transform: translateX(0);
+
+    &--transparent {
+      background-image: none;
+    }
+
+    &--fixed {
+      position: fixed;
+
+      transform: translateX(-50%);
+    }
+  }
+
+  .page-header__top {
+    width: 100%;
+    margin-bottom: 26px;
+  }
+
+  .page-header__site-logo {
+    margin-right: auto;
+  }
+
+  .page-header__navigation-toggle {
+    display: flex;
+  }
+
+  .page-header__icon {
+    margin-top: 3px;
+
+    stroke: $lightest;
+
+    &--hidden {
+      display: none;
+    }
+  }
+
+  .page-header__main-navigation {
+    order: 1;
+
+    border-top: 1px solid rgba($lightest, 0.16);
+
+    &--hidden {
+      display: none;
+    }
+  }
+
+  .page-geader__right-column {
+    flex-direction: column;
+    flex-wrap: wrap;
+    width: 100%;
+    margin-bottom: 19px;
+
+    &--hidden {
+      display: none;
+    }
+  }
+
+  .page-header__location-link {
+    margin-bottom: 17px;
+  }
+
+  .page-header__contacts {
+    margin-left: 0;
+  }
+}
+
