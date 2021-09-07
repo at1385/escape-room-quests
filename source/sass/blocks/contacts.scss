@@ -1,0 +1,22 @@
+.contacts {
+  @include list-reset;
+
+  flex-shrink: 0;
+  width: 129px;
+
+  word-wrap: break-word;
+
+  li {
+    margin-bottom: 4px;
+  }
+
+  a {
+    @include link;
+  }
+}
+
+@media (max-width: $tablet-max-width) {
+  .contacts {
+    width: 100%;
+  }
+}

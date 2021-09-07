@@ -1,9 +1,3 @@
-'use strict';
-
-(function () {
-  document.body.classList.add('js');
-})();
-
 (function () {
   const pageHeader = document.querySelector('.page-header');
   const navigationToggle = pageHeader.querySelector('.page-header__navigation-toggle');

@@ -1,0 +1,11 @@
+.main-navigation {
+  display: flex;
+  justify-content: flex-end;
+  width: 61%;
+}
+
+@media (max-width: $tablet-max-width) {
+  .main-navigation {
+    width: 100%;
+  }
+}
