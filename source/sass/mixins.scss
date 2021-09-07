@@ -14,3 +14,28 @@
   width: 1px;
   overflow: hidden;
 }
+
+@mixin link {
+  font-size: 14px;
+  line-height: 16px;
+  font-weight: 600;
+  color: $lightest;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  font-feature-settings: "pnum" on, "lnum" on;
+
+  outline: none;
+
+  &[href]:hover,
+  &[href]:focus {
+    color: $bright-main;
+  }
+
+  &[href]:active {
+    color: rgba($bright-main, 0.3);
+  }
+
+  &:not([href]) {
+    color: $bright-main;
+  }
+}

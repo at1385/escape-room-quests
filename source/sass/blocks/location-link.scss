@@ -1,0 +1,53 @@
+.location-link {
+  padding-left: 24px;
+  min-height: 21px;
+
+  font-size: 12px;
+  font-weight: 700;
+  line-height: 14px;
+  color: $bright-main;
+  letter-spacing: 0.02em;
+  vertical-align: middle;
+  text-transform: uppercase;
+
+  outline: none;
+
+  span {
+    position: relative;
+
+    display: inline-block;
+    max-width: 140px;
+    margin-top: 5px;
+    padding-bottom: 2px;
+
+    vertical-align: top;
+    word-wrap: break-word;
+
+    border-bottom: 1px dashed transparent;
+
+    &::before {
+      content: "";
+      position: absolute;
+      top: -4px;
+      left: -24px;
+
+      width: 16px;
+      height: 21px;
+
+      background-image: url("../img/bg-decor-location.svg");
+      background-repeat: no-repeat;
+    }
+  }
+
+  &:hover,
+  &:focus {
+    span {
+      border-bottom: 1px dashed $bright-main;
+    }
+  }
+
+  &:focus {
+    opacity: 0.3;
+  }
+}
+

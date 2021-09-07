@@ -1,0 +1,28 @@
+.site-navigation {
+  @include list-reset;
+
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  width: 578px;
+
+  word-wrap: break-word;
+
+  li {
+    max-width: 100%;
+    margin-right: 47px;
+    margin-bottom: 7px;
+
+    word-wrap: break-word;
+
+    &:last-child {
+      margin-right: auto;
+    }
+  }
+
+  a {
+    @include link;
+    word-wrap: break-word;
+  }
+}
+

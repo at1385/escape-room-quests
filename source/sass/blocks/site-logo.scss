@@ -1,0 +1,22 @@
+.site-logo {
+  width: 134px;
+  height: 52px;
+
+  svg {
+    fill: $lightest;
+    stroke: $lightest;
+  }
+
+  &[href]:hover,
+  &[href]:focus {
+    svg {
+      fill: $bright-main;
+      stroke: $bright-main;
+    }
+  }
+
+  &[href]:active {
+    opacity: 0.3;
+  }
+}
+
