@@ -46,3 +46,9 @@
   }
 }
 
+@media (max-width: $tablet-max-width) {
+  .page-main__wrapper {
+    padding-right: 95px;
+  }
+}
+
