@@ -13,3 +13,8 @@
   transform: translateX(-50%);
 }
 
+@media (max-width: $mobile-max-width) {
+  .page-footer {
+    padding-bottom: 30px;
+  }
+}
