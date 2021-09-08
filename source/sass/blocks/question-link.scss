@@ -1,0 +1,43 @@
+.question-link {
+  position: relative;
+
+  display: inline-block;
+  max-width: 94px;
+  margin-top: 5px;
+  padding-bottom: 3px;
+
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 17px;
+  color: $light;
+  text-align: right;
+  vertical-align: top;
+  word-wrap: break-word;
+
+  border-bottom: 1px dashed $light;
+
+  &::before {
+    content: "?";
+    position: absolute;
+    top: 0;
+    left: -4px;
+
+    display: none;
+    width: 10px;
+    height: 17px;
+  }
+
+  &:hover,
+  &:focus {
+    padding-left: 10px;
+
+    color: $bright-main;
+
+    border-bottom-color: $bright-main;
+
+    &::before {
+      display: block;
+    }
+  }
+}
+
