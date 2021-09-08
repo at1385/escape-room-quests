@@ -1,0 +1,38 @@
+.button {
+  display: inline-block;
+  min-width: 252px;
+  max-width: 468px;
+  padding: 22px 52px;
+
+  font-size: 17px;
+  font-weight: 800;
+  line-height: 20px;
+  color: $lightest;
+  letter-spacing: 0.03em;
+  text-align: center;
+  vertical-align: top;
+  text-transform: uppercase;
+  word-wrap: break-word;
+
+  background-color: $bright-main;
+  border-radius: 65px;
+
+  cursor: pointer;
+
+  &:hover,
+  &:focus {
+    background-color: lighten($bright-main, 5%);
+  }
+
+  &:focus {
+    outline: 1px dashed rgba($bright-main, 0.5);
+    outline-offset: 5px;
+  }
+
+  &:active {
+    outline: none;
+
+    opacity: 0.3;
+  }
+}
+
