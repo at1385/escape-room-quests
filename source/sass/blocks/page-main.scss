@@ -52,3 +52,43 @@
   }
 }
 
+@media (max-width: $mobile-max-width) {
+  .page-main {
+    padding-bottom: 65px;
+
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
+    background-size: cover;
+
+    &--index {
+      background-image: url("../img/bg-index-mobile.jpg");
+
+      @media (min-resolution: $retina-dpi), (min-resolution: $retina-dppx) {
+        background-image: url("../img/bg-index-mobile@2x.jpg");
+      }
+    }
+  }
+
+  .page-main__wrapper {
+    padding: 0 16px;
+
+    h1 {
+      width: 328px;
+      margin-top: 315px;
+      margin-right: auto;
+      margin-left: auto;
+
+      font-size: 36px;
+      line-height: 40px;
+      text-align: center;
+    }
+
+    p {
+      display: none;
+    }
+
+    .page-main__button {
+      margin: 0 auto;
+    }
+  }
+}
