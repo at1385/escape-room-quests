@@ -79,3 +79,16 @@
   }
 }
 
+@media (max-width: $mobile-max-width) {
+  .modal {
+    width: 100%;
+    min-width: 360px;
+    height: 100vh;
+    padding: 32px 16px;
+  }
+
+  .modal__wrapper {
+    max-width: 416px;
+    margin: 0 auto;
+  }
+}
