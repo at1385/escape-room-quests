@@ -17,6 +17,9 @@
   background-color: $bright-main;
   border-radius: 65px;
 
+  border: none;
+  outline: none;
+
   cursor: pointer;
 
   &:hover,
@@ -33,6 +36,25 @@
     outline: none;
 
     opacity: 0.3;
+
+    &:disabled {
+      opacity: 1;
+    }
+  }
+
+  &--small {
+    min-width: 219px;
+    max-width: 219px;
+    padding: 15px 28px;
+
+    font-size: 14px;
+    line-height: 16px;
+  }
+
+  &:disabled {
+    background-color: #b8b8b8;
+
+    cursor: default;
   }
 }
 

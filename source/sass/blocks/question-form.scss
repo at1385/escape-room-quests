@@ -1,0 +1,205 @@
+.question-form {
+  h2 {
+    margin-bottom: 40px;
+  }
+}
+
+.question-form__field {
+  position: relative;
+
+  width: 100%;
+  margin-bottom: 29px;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+
+  p {
+    margin-bottom: 14px;
+  }
+
+  label {
+    position: absolute;
+    top: 28px;
+    left: 20px;
+    padding: 0 5px;
+
+    font-size: 12px;
+    line-height: 17px;
+    color: rgba($light, 0.64);
+    text-align: center;
+
+    cursor: pointer;
+  }
+
+  input,
+  textarea {
+    width: 98%;
+    max-width: 400px;
+    padding: 16px 24px;
+
+    font-family: inherit;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 20px;
+    color: $light;
+
+    background-color: transparent;
+
+    border: 1px solid rgba($lightest, 0.4);
+    border-radius: 3px;
+    outline: none;
+
+    &::placeholder {
+      color: rgba($light, 0.64);
+    }
+
+    &:hover,
+    &:focus {
+      border-color: rgba($lightest, 0.64);
+    }
+  }
+
+  textarea {
+    height: 120px;
+
+    resize: vertical;
+  }
+
+  &--valid {
+    input,
+    textarea {
+      border-color: $bright-success;
+    }
+
+    input:hover,
+    input:focus,
+    textarea:hover,
+    textarea:focus {
+      border-color: $bright-success;
+    }
+  }
+
+  &--invalid {
+    input,
+    textarea {
+      border-color: $bright-main;
+    }
+
+    input:hover,
+    input:focus,
+    textarea:hover,
+    textarea:focus {
+      border-color: $bright-main;
+    }
+  }
+
+  &--username,
+  &--user-email {
+    label {
+      display: none;
+    }
+
+    input:focus + label {
+      display: block;
+    }
+  }
+
+  &--username {
+    label {
+      background-color: darken($dark, 1%);
+    }
+  }
+
+  &--user-email {
+    label {
+      background-color: darken($dark, 1.5%);
+    }
+  }
+
+  &--textarea {
+    label {
+      position: static;
+
+      display: inline-block;
+      margin-bottom: 12px;
+      padding: 0;
+
+      font: inherit;
+      color: $light;
+
+      background-color: transparent;
+    }
+  }
+
+  &--checkbox {
+    input {
+      display: none;
+    }
+
+    label {
+      position: relative;
+      top: 0;
+      left: 0;
+
+      display: block;
+      margin-bottom: 5px;
+      padding: 0;
+      padding-left: 21px;
+
+      font-size: 14px;
+      line-height: 20px;
+      text-align: left;
+    }
+
+    label::before {
+      content: "";
+      position: absolute;
+      top: 3px;
+      left: 0;
+
+      width: 16px;
+      height: 16px;
+
+      background-color: rgba($bright-main, 0.5);
+
+      border-radius: 4px;
+    }
+
+    label:hover::before,
+    label:focus::before {
+      background-color: $bright-main;
+    }
+
+    label:active::before {
+      opacity: 0.8;
+    }
+
+    a {
+      color: $light;
+      text-decoration: underline;
+    }
+
+    a:hover,
+    a:focus {
+      color: $bright-main;
+    }
+
+    a:active {
+      color: rgba($bright-main, 0.3);
+    }
+
+    input:checked + label::before {
+      background-color: $bright-main;
+      background-image: url("../img/bg-form-checkmark.svg");
+      background-repeat: no-repeat;
+      background-position: 50%;
+    }
+  }
+}
+
+.question-form__submit-wrapper {
+  margin-bottom: 25px;
+
+  text-align: center;
+}
