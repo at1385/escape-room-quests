@@ -30,6 +30,28 @@
   &--hidden {
     display: none;
   }
+
+  &--page {
+    position: static;
+
+    margin: 0 auto;
+    padding: 0 32px;
+
+    background-color: transparent;
+    background-image: none;
+
+    transform: translate(0, 0);
+
+    h2 {
+      text-align: center;
+    }
+  }
+
+  &--city-chooser-page {
+    h2 {
+      text-align: left;
+    }
+  }
 }
 
 .modal__wrapper {
@@ -48,8 +70,8 @@
 
 .modal__close-button {
   position: absolute;
-  top: 7px;
-  right: 4px;
+  top: 41px;
+  right: 37px;
 
   width: 14px;
   height: 14px;
@@ -85,10 +107,19 @@
     min-width: 360px;
     height: 100vh;
     padding: 32px 16px;
+
+    &--page {
+      max-width: 416px;
+      min-width: 328px;
+      height: auto;
+      padding: 0;
+    }
   }
 
   .modal__wrapper {
     max-width: 416px;
     margin: 0 auto;
+  .modal__close-button {
+    right: 20px;
   }
 }

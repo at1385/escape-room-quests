@@ -196,10 +196,29 @@
       background-position: 50%;
     }
   }
+
+  &--modal-page {
+    input,
+    textarea {
+      width: 100%;
+      max-width: 100%;
+    }
+  }
 }
 
 .question-form__submit-wrapper {
   margin-bottom: 25px;
 
   text-align: center;
+}
+
+@media (max-width: $mobile-max-width) {
+  .question-form__field {
+    &--modal-page {
+      input,
+      textarea {
+        max-width: 416px;
+      }
+    }
+  }
 }
