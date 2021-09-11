@@ -79,7 +79,15 @@
     }
   };
 
-  modals.forEach((item, index) => {
-    manageModal(item, modalOpenButtons[index]);
-  });
+  if (modals[0].classList.contains('modal--page')) {
+    modals.forEach((item, index) => {
+      if (!item.classList.contains('modal--page')) {
+        manageModal(item, modalOpenButtons[index - 1]);
+      }
+    });
+  } else {
+    modals.forEach((item, index) => {
+      manageModal(item, modalOpenButtons[index]);
+    });
+  }
 })();
