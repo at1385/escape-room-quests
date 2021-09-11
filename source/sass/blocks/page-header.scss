@@ -9,6 +9,12 @@
   padding-top: 24px;
 
   transform: translateX(-50%);
+
+  &--background {
+    padding-bottom: 24px;
+
+    background-image: linear-gradient(0deg, transparent 0%, $dark 50%);
+  }
 }
 
 .page-header__top {
@@ -95,8 +101,14 @@
 @media (max-width: $tablet-max-width) {
   .js {
     .page-header {
+      &--background {
+        background-image: linear-gradient(0deg, transparent 0%, $dark 50%);
+      }
+
       &--opened {
         height: 100vh;
+
+        background-image: linear-gradient(170.74deg, #633c0f -68.98%, #24150e 75.12%, #1a140d 132.97%);
       }
     }
   }
@@ -126,7 +138,10 @@
 
   .page-header__top {
     width: 100%;
-    margin-bottom: 26px;
+
+    &--opened {
+      margin-bottom: 26px;
+    }
   }
 
   .page-header__site-logo {
