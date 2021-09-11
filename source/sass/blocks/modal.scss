@@ -5,6 +5,7 @@
   z-index: 1000;
 
   width: 480px;
+  max-height: 100%;
   padding: 32px;
 
   background-color: $darkest;
@@ -47,6 +48,14 @@
     }
   }
 
+  &--city-chooser {
+    height: 482px;
+  }
+
+  &--question {
+    height: 685px;
+  }
+
   &--city-chooser-page {
     h2 {
       text-align: left;
@@ -55,11 +64,13 @@
 }
 
 .modal__wrapper {
-  position: relative;
+  position: absolute;
+  top: 0;
+  left: 0;
 
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
+  width: 100%;
+  height: 100%;
+  padding: 32px;
 
   overflow: auto;
 
@@ -117,8 +128,14 @@
   }
 
   .modal__wrapper {
+    left: 50%;
+
     max-width: 416px;
-    margin: 0 auto;
+    padding: 32px 16px;
+
+    transform: translateX(-50%);
+  }
+
   .modal__close-button {
     right: 20px;
   }

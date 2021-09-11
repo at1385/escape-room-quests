@@ -17,9 +17,11 @@
       }
     };
 
-    window.addEventListener('resize', function () {
-      toggleDefaultScrollbar(modalScrollbar, '(min-height: 485px)', 'modal__wrapper--hidden-scroll');
-    });
+    if (modalScrollbar) {
+      window.addEventListener('resize', function () {
+        toggleDefaultScrollbar(modalScrollbar, '(min-height: 685px)', 'modal__wrapper--hidden-scroll');
+      });
+    }
 
     const isEscKeydown = (evt) => evt.key === 'Escape' || evt.key === 'Esc';
 
