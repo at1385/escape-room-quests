@@ -96,7 +96,7 @@
 
     <div class="overlay overlay--hidden"></div>
 
-    <form class="modal modal--hidden city-chooser-form" id="city-chooser-form" action="https://echo.htmlacademy.ru/" method="POST">
+    <form class="modal modal--hidden modal--city-chooser city-chooser-form" id="city-chooser-form" action="https://echo.htmlacademy.ru/" method="POST">
       <div class="modal__wrapper">
         <h2>Ваш город:</h2>
 
@@ -114,20 +114,30 @@
 
         <p>... или выберите вручную</p>
 
-        <input id="city-chooser-form-novosibirsk" type="radio" name="city-chooser-form-name" value="novosibirsk" checked>
-        <label for="city-chooser-form-novosibirsk">Новосибирск</label>
+        <div class="city-chooser-form__field">
+          <input id="city-chooser-form-novosibirsk" type="radio" name="city-chooser-form-name" value="novosibirsk" checked>
+          <label for="city-chooser-form-novosibirsk">Новосибирск</label>
+        </div>
 
-        <input id="city-chooser-form-irkutsk" type="radio" name="city-chooser-form-name" value="irkutsk">
-        <label for="city-chooser-form-irkutsk">Иркутск</label>
+        <div class="city-chooser-form__field">
+          <input id="city-chooser-form-irkutsk" type="radio" name="city-chooser-form-name" value="irkutsk">
+          <label for="city-chooser-form-irkutsk">Иркутск</label>
+        </div>
 
-        <input id="city-chooser-form-smolensk" type="radio" name="city-chooser-form-name" value="smolensk">
-        <label for="city-chooser-form-smolensk">Смоленск</label>
+        <div class="city-chooser-form__field">
+          <input id="city-chooser-form-smolensk" type="radio" name="city-chooser-form-name" value="smolensk">
+          <label for="city-chooser-form-smolensk">Смоленск</label>
+        </div>
 
-        <input id="city-chooser-form-volgograd" type="radio" name="city-chooser-form-name" value="volgograd">
-        <label for="city-chooser-form-volgograd">Волгоград</label>
+        <div class="city-chooser-form__field">
+          <input id="city-chooser-form-volgograd" type="radio" name="city-chooser-form-name" value="volgograd">
+          <label for="city-chooser-form-volgograd">Волгоград</label>
+        </div>
 
-        <input id="city-chooser-form-komsomolsk-on-amur" type="radio" name="city-chooser-form-name" value="komsomolsk-on-amur">
-        <label for="city-chooser-form-komsomolsk-on-amur">Комсомольск-на-Амуре</label>
+        <div class="city-chooser-form__field">
+          <input id="city-chooser-form-komsomolsk-on-amur" type="radio" name="city-chooser-form-name" value="komsomolsk-on-amur">
+          <label for="city-chooser-form-komsomolsk-on-amur">Комсомольск-на-Амуре</label>
+        </div>
       </div>
     </form>
 
