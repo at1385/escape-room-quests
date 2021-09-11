@@ -29,49 +29,16 @@
     line-height: 27px;
     color: inherit;
   }
-
-  input {
-    @include visually-hidden;
-
-    &:focus + label {
-      outline: 1px dotted rgba($lightest, 0.3);
-      outline-offset: 7px;
-    }
-  }
-
-  label {
-    margin-bottom: 18px;
-
-    font-size: 24px;
-    font-weight: 700;
-    line-height: 29px;
-    color: rgba($lightest, 0.32);
-
-    border-bottom: 2px solid transparent;
-
-    cursor: pointer;
-
-    &:hover {
-      color: $lightest;
-    }
-
-    &:active {
-      color: rgba($lightest, 0.1);
-    }
-  }
-
-  input:checked + label {
-    color: $lightest;
-
-    border-bottom-color: $bright-main;
-  }
 }
 
 .city-chooser-form__geolocation {
   position: relative;
 
+  display: inline-block;
   margin-bottom: 42px;
   padding-left: 32px;
+
+  vertical-align: top;
 
   &::before {
     content: "";
@@ -108,5 +75,43 @@
     span {
       border-bottom-color: rgba($bright-main, 0.2);
     }
+  }
+}
+
+.city-chooser-form__field {
+  margin-bottom: 19px;
+
+  input {
+    @include visually-hidden;
+
+    &:focus + label {
+      outline: 1px dotted rgba($lightest, 0.3);
+      outline-offset: 7px;
+    }
+  }
+
+  label {
+    font-size: 24px;
+    font-weight: 700;
+    line-height: 29px;
+    color: rgba($lightest, 0.32);
+
+    border-bottom: 2px solid transparent;
+
+    cursor: pointer;
+
+    &:hover {
+      color: $lightest;
+    }
+
+    &:active {
+      color: rgba($lightest, 0.1);
+    }
+  }
+
+  input:checked + label {
+    color: $lightest;
+
+    border-bottom-color: $bright-main;
   }
 }
