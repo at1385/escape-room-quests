@@ -24,6 +24,8 @@ body {
   color: $light;
 
   background-color: $darker;
+  background-image: linear-gradient(0deg, $darkest 0%, $dark 100%);
+  background-attachment: fixed;
 }
 
 img {
