@@ -17,9 +17,11 @@
       }
     };
 
-    window.addEventListener('resize', function () {
-      toggleDefaultScrollbar(modalScrollbar, '(min-height: 485px)', 'modal__wrapper--hidden-scroll');
-    });
+    if (modalScrollbar) {
+      window.addEventListener('resize', function () {
+        toggleDefaultScrollbar(modalScrollbar, '(min-height: 685px)', 'modal__wrapper--hidden-scroll');
+      });
+    }
 
     const isEscKeydown = (evt) => evt.key === 'Escape' || evt.key === 'Esc';
 
@@ -77,7 +79,15 @@
     }
   };
 
-  modals.forEach((item, index) => {
-    manageModal(item, modalOpenButtons[index]);
-  });
+  if (modals[0].classList.contains('modal--page')) {
+    modals.forEach((item, index) => {
+      if (!item.classList.contains('modal--page')) {
+        manageModal(item, modalOpenButtons[index - 1]);
+      }
+    });
+  } else {
+    modals.forEach((item, index) => {
+      manageModal(item, modalOpenButtons[index]);
+    });
+  }
 })();
