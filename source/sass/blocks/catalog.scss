@@ -321,4 +321,13 @@
       width: 22px;
     }
   }
+
+  .catalog__item {
+    width: 100%;
+    margin-bottom: 16px;
+
+    &:not(:nth-child(even)) {
+      margin-right: 0;
+    }
+  }
 }
