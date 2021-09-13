@@ -88,6 +88,7 @@
 
 @media (max-width: $mobile-max-width) {
   .page-main {
+    padding-top: 76px;
     padding-bottom: 65px;
 
     background-repeat: no-repeat;
@@ -137,6 +138,10 @@
     &--modal-page {
       padding: 0 16px;
     }
+  }
+
+  .page-main__catalog {
+    margin-top: 10px;
   }
 
   .page-main__button {

@@ -124,3 +124,60 @@
   }
 }
 
+@media (max-width: $mobile-max-width) {
+  .catalog {
+    max-width: 615px;
+    min-width: 328px;
+    padding: 0 16px;
+  }
+
+  .catalog__block-header {
+    margin-bottom: 40px;
+  }
+
+  .catalog__filters-wrapper {
+    margin-bottom: 30px;
+
+    &::before {
+      height: 32px;
+    }
+  }
+
+  .catalog__filter {
+    height: 32px;
+    margin-right: 16px;
+    padding-right: 13px;
+
+    label {
+      line-height: 23px;
+    }
+  }
+
+  .catalog__filter-icon {
+    height: 24px;
+
+    &--all {
+      width: 21px;
+    }
+
+    &--adventures {
+      width: 29px;
+    }
+
+    &--horrors {
+      width: 24px;
+    }
+
+    &--mysticism {
+      width: 24px;
+    }
+
+    &--detective {
+      width: 32px;
+    }
+
+    &--sci-fi {
+      width: 22px;
+    }
+  }
+}
