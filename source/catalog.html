@@ -1,0 +1,492 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Каталог квестов «Escape Room» - богатый выбор квестов на разную тематику">
+    <link rel="preload" href="fonts/raleway-500.woff2" as="font">
+    <title>Каталог квестов «Escape Room»</title>
+    <link rel="stylesheet" href="css/style.min.css">
+  </head>
+
+  <body>
+    <header class="page-header container">
+      <div class="page-header__top page-header__top--opened">
+        <a class="page-header__site-logo site-logo" href="index.html">
+          <svg width="134" height="52" viewBox="0 0 134 52">
+            <use xlink:href="img/sprite.svg#icon-logo-escape-room"></use>
+          </svg>
+        </a>
+
+        <button class="page-header__navigation-toggle page-header__navigation-toggle--hidden" type="button">
+          <span>Меню</span>
+
+          <svg class="page-header__icon page-header__icon--burger" width="20" height="14">
+            <use xlink:href="img/sprite.svg#icon-button-burger"></use>
+          </svg>
+
+          <svg class="page-header__icon page-header__icon--close page-header__icon--hidden" width="16" height="16">
+            <use xlink:href="img/sprite.svg#icon-button-close"></use>
+          </svg>
+        </button>
+      </div>
+
+      <nav class="page-header__main-navigation main-navigation">
+        <ul class="site-navigation">
+          <li>
+            <a>Квесты</a>
+          </li>
+          <li>
+            <a href="#">Новичкам</a>
+          </li>
+          <li>
+            <a href="#">Отзывы</a>
+          </li>
+          <li>
+            <a href="#">Акции</a>
+          </li>
+          <li>
+            <a href="#">Контакты</a>
+          </li>
+        </ul>
+      </nav>
+
+      <div class="page-geader__right-column">
+        <a class="page-header__location-link location-link modal-open" href="modal-city-chooser.html">
+          <span>Новосибирск</span>
+        </a>
+
+        <ul class="page-header__contacts contacts">
+          <li>
+            <a href="tel:+83832840160">8 (383) 284 01 60</a>
+          </li>
+        </ul>
+      </div>
+    </header>
+
+    <main class="page-main">
+      <section class="page-main__catalog catalog container">
+        <header class="catalog__block-header block-header">
+          <span>квесты в Новосибирске</span>
+          <h1>Выберите тематику</h1>
+        </header>
+
+        <div class="catalog__filters-wrapper">
+          <div class="catalog__filters-limiter dragscroll">
+            <form class="catalog__filters" action="#">
+              <div class="catalog__filter">
+                <input id="catalog-filter-all" type="radio" name="catalog-filter-category" value="all" checked>
+                <label for="catalog-filter-all">Все квесты</label>
+
+                <svg class="catalog__filter-icon catalog__filter-icon--all" width="26" height="30" viewBox="0 0 26 30">
+                  <use xlink:href="img/sprite.svg#icon-quests-all"></use>
+                </svg>
+              </div>
+
+              <div class="catalog__filter">
+                <input id="catalog-filter-adventures" type="radio" name="catalog-filter-category" value="adventures">
+                <label for="catalog-filter-adventures">Приключения</label>
+
+                <svg class="catalog__filter-icon catalog__filter-icon--adventures" width="36" height="30" viewBox="0 0 36 30">
+                  <use xlink:href="img/sprite.svg#icon-quests-adventures"></use>
+                </svg>
+              </div>
+
+              <div class="catalog__filter">
+                <input id="catalog-filter-horrors" type="radio" name="catalog-filter-category" value="horrors">
+                <label for="catalog-filter-horrors">Ужасы</label>
+
+                <svg class="catalog__filter-icon catalog__filter-icon--horrors" width="30" height="30" viewBox="0 0 30 30">
+                  <use xlink:href="img/sprite.svg#icon-quests-horrors"></use>
+                </svg>
+              </div>
+
+              <div class="catalog__filter">
+                <input id="catalog-filter-mysticism" type="radio" name="catalog-filter-category" value="mysticism">
+                <label for="catalog-filter-mysticism">Мистика</label>
+
+                <svg class="catalog__filter-icon catalog__filter-icon--mysticism" width="30" height="30" viewBox="0 0 30 30">
+                  <use xlink:href="img/sprite.svg#icon-quests-mysticism"></use>
+                </svg>
+              </div>
+
+              <div class="catalog__filter">
+                <input id="catalog-filter-detective" type="radio" name="catalog-filter-category" value="detective">
+                <label for="catalog-filter-detective">Детектив</label>
+
+                <svg class="catalog__filter-icon catalog__filter-icon--detective" width="40" height="30" viewBox="0 0 40 30">
+                  <use xlink:href="img/sprite.svg#icon-quests-detective"></use>
+                </svg>
+              </div>
+
+              <div class="catalog__filter">
+                <input id="catalog-filter-sci-fi" type="radio" name="catalog-filter-category" value="sci-fi">
+                <label for="catalog-filter-sci-fi">Sci-fi</label>
+
+                <svg class="catalog__filter-icon catalog__filter-icon--sci-fi" width="28" height="30" viewBox="0 0 28 30">
+                  <use xlink:href="img/sprite.svg#icon-quests-sci-fi"></use>
+                </svg>
+              </div>
+
+
+
+
+              <!-- <div class="catalog__filter">
+                <input id="catalog-filter-all" type="radio" name="catalog-filter-category" value="all" checked>
+                <label for="catalog-filter-all">Все квесты</label>
+
+                <svg width="26" height="30" viewBox="0 0 26 30">
+                  <use xlink:href="img/sprite.svg#icon-quests-all"></use>
+                </svg>
+              </div>
+
+              <div class="catalog__filter">
+                <input id="catalog-filter-adventures" type="radio" name="catalog-filter-category" value="adventures">
+                <label for="catalog-filter-adventures">Приключения</label>
+
+                <svg width="36" height="30" viewBox="0 0 36 30">
+                  <use xlink:href="img/sprite.svg#icon-quests-adventures"></use>
+                </svg>
+              </div>
+
+              <div class="catalog__filter">
+                <input id="catalog-filter-horrors" type="radio" name="catalog-filter-category" value="horrors">
+                <label for="catalog-filter-horrors">Ужасы</label>
+
+                <svg width="30" height="30" viewBox="0 0 30 30">
+                  <use xlink:href="img/sprite.svg#icon-quests-horrors"></use>
+                </svg>
+              </div>
+
+              <div class="catalog__filter">
+                <input id="catalog-filter-mysticism" type="radio" name="catalog-filter-category" value="mysticism">
+                <label for="catalog-filter-mysticism">Мистика</label>
+
+                <svg width="30" height="30" viewBox="0 0 30 30">
+                  <use xlink:href="img/sprite.svg#icon-quests-mysticism"></use>
+                </svg>
+              </div>
+
+              <div class="catalog__filter">
+                <input id="catalog-filter-detective" type="radio" name="catalog-filter-category" value="detective">
+                <label for="catalog-filter-detective">Детектив</label>
+
+                <svg width="40" height="30" viewBox="0 0 40 30">
+                  <use xlink:href="img/sprite.svg#icon-quests-detective"></use>
+                </svg>
+              </div>
+
+              <div class="catalog__filter">
+                <input id="catalog-filter-sci-fi" type="radio" name="catalog-filter-category" value="sci-fi">
+                <label for="catalog-filter-sci-fi">Sci-fi</label>
+
+                <svg width="28" height="30" viewBox="0 0 28 30">
+                  <use xlink:href="img/sprite.svg#icon-quests-sci-fi"></use>
+                </svg>
+              </div>
+
+              <div class="catalog__filter">
+                <input id="catalog-filter-all" type="radio" name="catalog-filter-category" value="all" checked>
+                <label for="catalog-filter-all">Все квесты</label>
+
+                <svg width="26" height="30" viewBox="0 0 26 30">
+                  <use xlink:href="img/sprite.svg#icon-quests-all"></use>
+                </svg>
+              </div>
+
+              <div class="catalog__filter">
+                <input id="catalog-filter-adventures" type="radio" name="catalog-filter-category" value="adventures">
+                <label for="catalog-filter-adventures">Приключения</label>
+
+                <svg width="36" height="30" viewBox="0 0 36 30">
+                  <use xlink:href="img/sprite.svg#icon-quests-adventures"></use>
+                </svg>
+              </div>
+
+              <div class="catalog__filter">
+                <input id="catalog-filter-horrors" type="radio" name="catalog-filter-category" value="horrors">
+                <label for="catalog-filter-horrors">Ужасы</label>
+
+                <svg width="30" height="30" viewBox="0 0 30 30">
+                  <use xlink:href="img/sprite.svg#icon-quests-horrors"></use>
+                </svg>
+              </div>
+
+              <div class="catalog__filter">
+                <input id="catalog-filter-mysticism" type="radio" name="catalog-filter-category" value="mysticism">
+                <label for="catalog-filter-mysticism">Мистика</label>
+
+                <svg width="30" height="30" viewBox="0 0 30 30">
+                  <use xlink:href="img/sprite.svg#icon-quests-mysticism"></use>
+                </svg>
+              </div>
+
+              <div class="catalog__filter">
+                <input id="catalog-filter-detective" type="radio" name="catalog-filter-category" value="detective">
+                <label for="catalog-filter-detective">Детектив</label>
+
+                <svg width="40" height="30" viewBox="0 0 40 30">
+                  <use xlink:href="img/sprite.svg#icon-quests-detective"></use>
+                </svg>
+              </div>
+
+              <div class="catalog__filter">
+                <input id="catalog-filter-sci-fi" type="radio" name="catalog-filter-category" value="sci-fi">
+                <label for="catalog-filter-sci-fi">Sci-fi</label>
+
+                <svg width="28" height="30" viewBox="0 0 28 30">
+                  <use xlink:href="img/sprite.svg#icon-quests-sci-fi"></use>
+                </svg>
+              </div> -->
+            </form>
+          </div>
+        </div>
+      </section>
+      <!-- <section class="page-main__catalog catalog container">
+        <header class="block-header">
+          <span>квесты в Новосибирске</span>
+          <h1>Выберите тематику</h1>
+        </header>
+
+        <div class="catalog__filters-wrapper">
+          <form class="catalog__filters dragscroll" action="#">
+            <div class="catalog__filter">
+              <input id="catalog-filter-all" type="radio" name="catalog-filter-category" value="all" checked>
+              <label for="catalog-filter-all">Все квесты</label>
+
+              <svg width="26" height="30" viewBox="0 0 26 30">
+                <use xlink:href="img/sprite.svg#icon-quests-all"></use>
+              </svg>
+            </div>
+
+            <div class="catalog__filter">
+              <input id="catalog-filter-adventures" type="radio" name="catalog-filter-category" value="adventures">
+              <label for="catalog-filter-adventures">Приключения</label>
+
+              <svg width="36" height="30" viewBox="0 0 36 30">
+                <use xlink:href="img/sprite.svg#icon-quests-adventures"></use>
+              </svg>
+            </div>
+
+            <div class="catalog__filter">
+              <input id="catalog-filter-horrors" type="radio" name="catalog-filter-category" value="horrors">
+              <label for="catalog-filter-horrors">Ужасы</label>
+
+              <svg width="30" height="30" viewBox="0 0 30 30">
+                <use xlink:href="img/sprite.svg#icon-quests-horrors"></use>
+              </svg>
+            </div>
+
+            <div class="catalog__filter">
+              <input id="catalog-filter-mysticism" type="radio" name="catalog-filter-category" value="mysticism">
+              <label for="catalog-filter-mysticism">Мистика</label>
+
+              <svg width="30" height="30" viewBox="0 0 30 30">
+                <use xlink:href="img/sprite.svg#icon-quests-mysticism"></use>
+              </svg>
+            </div>
+
+            <div class="catalog__filter">
+              <input id="catalog-filter-detective" type="radio" name="catalog-filter-category" value="detective">
+              <label for="catalog-filter-detective">Детектив</label>
+
+              <svg width="40" height="30" viewBox="0 0 40 30">
+                <use xlink:href="img/sprite.svg#icon-quests-detective"></use>
+              </svg>
+            </div>
+
+            <div class="catalog__filter">
+              <input id="catalog-filter-sci-fi" type="radio" name="catalog-filter-category" value="sci-fi">
+              <label for="catalog-filter-sci-fi">Sci-fi</label>
+
+              <svg width="28" height="30" viewBox="0 0 28 30">
+                <use xlink:href="img/sprite.svg#icon-quests-sci-fi"></use>
+              </svg>
+            </div>
+          </form>
+        </div>
+      </section> -->
+
+      <!-- <section class="section">
+        <div class="wrapper">
+          <div class="limiter dragscroll">
+            <form class="form dragscroll" action="#">
+              <div class="form__field">
+                <input type="radio">
+                <label for="">Все квесты</label>
+
+                <svg width="26" height="30" viewBox="0 0 26 30">
+                  <use xlink:href="img/sprite.svg#icon-quests-all"></use>
+                </svg>
+              </div>
+
+              <div class="form__field">
+                <input type="radio">
+                <label for="">Приключения</label>
+
+                <svg width="36" height="30" viewBox="0 0 36 30">
+                  <use xlink:href="img/sprite.svg#icon-quests-adventures"></use>
+                </svg>
+              </div>
+
+              <div class="form__field">
+                <input type="radio">
+                <label for="">Ужасы</label>
+
+                <svg width="30" height="30" viewBox="0 0 30 30">
+                  <use xlink:href="img/sprite.svg#icon-quests-horrors"></use>
+                </svg>
+              </div>
+
+              <div class="form__field">
+                <input type="radio">
+                <label for="">Мистика</label>
+
+                <svg width="30" height="30" viewBox="0 0 30 30">
+                  <use xlink:href="img/sprite.svg#icon-quests-mysticism"></use>
+                </svg>
+              </div>
+
+              <div class="form__field">
+                <input type="radio">
+                <label for="">Детектив</label>
+
+                <svg width="40" height="30" viewBox="0 0 40 30">
+                  <use xlink:href="img/sprite.svg#icon-quests-detective"></use>
+                </svg>
+              </div>
+
+              <div class="form__field">
+                <input type="radio">
+                <label for="">Sci-fi</label>
+
+                <svg width="28" height="30" viewBox="0 0 28 30">
+                  <use xlink:href="img/sprite.svg#icon-quests-sci-fi"></use>
+                </svg>
+              </div>
+            </form>
+          </div>
+        </div>
+      </section> -->
+    </main>
+
+    <footer class="page-footer container">
+      <ul class="page-footer__socials socials">
+        <li>
+          <a class="socials__link socials__link--instagram" href="#">
+            <span class="visually-hidden">Instagram</span>
+
+            <svg width="28" height="28" viewBox="0 0 28 28">
+              <use xlink:href="img/sprite.svg#icon-logo-instagram"></use>
+            </svg>
+          </a>
+        </li>
+
+        <li>
+          <a class="socials__link socials__link--vkontakte" href="#">
+            <span class="visually-hidden">Vkontakte</span>
+
+            <svg width="28" height="28" viewBox="0 0 28 28">
+              <use xlink:href="img/sprite.svg#icon-logo-vk"></use>
+            </svg>
+          </a>
+        </li>
+      </ul>
+
+      <a class="question-link modal-open" href="modal-question.html">Задать вопрос</a>
+    </footer>
+
+    <div class="overlay overlay--hidden"></div>
+
+    <form class="modal modal--hidden modal--city-chooser city-chooser-form" id="city-chooser-form" action="https://echo.htmlacademy.ru/" method="POST">
+      <div class="modal__wrapper">
+        <h2>Ваш город:</h2>
+
+        <button class="modal__close-button" type="button">
+          <span class="visually-hidden">Закрыть окно</span>
+
+          <svg width="14" height="14" viewBox="0 0 16 16">
+            <use xlink:href="img/sprite.svg#icon-button-close"></use>
+          </svg>
+        </button>
+
+        <a class="city-chooser-form__geolocation" href="#">
+          <span>Определить местоположение</span>
+        </a>
+
+        <p>... или выберите вручную</p>
+
+        <div class="city-chooser-form__field">
+          <input id="city-chooser-form-novosibirsk" type="radio" name="city-chooser-form-name" value="novosibirsk" checked>
+          <label for="city-chooser-form-novosibirsk">Новосибирск</label>
+        </div>
+
+        <div class="city-chooser-form__field">
+          <input id="city-chooser-form-irkutsk" type="radio" name="city-chooser-form-name" value="irkutsk">
+          <label for="city-chooser-form-irkutsk">Иркутск</label>
+        </div>
+
+        <div class="city-chooser-form__field">
+          <input id="city-chooser-form-smolensk" type="radio" name="city-chooser-form-name" value="smolensk">
+          <label for="city-chooser-form-smolensk">Смоленск</label>
+        </div>
+
+        <div class="city-chooser-form__field">
+          <input id="city-chooser-form-volgograd" type="radio" name="city-chooser-form-name" value="volgograd">
+          <label for="city-chooser-form-volgograd">Волгоград</label>
+        </div>
+
+        <div class="city-chooser-form__field">
+          <input id="city-chooser-form-komsomolsk-on-amur" type="radio" name="city-chooser-form-name" value="komsomolsk-on-amur">
+          <label for="city-chooser-form-komsomolsk-on-amur">Комсомольск-на-Амуре</label>
+        </div>
+      </div>
+    </form>
+
+    <form class="modal modal--hidden modal--question question-form" id="question-form" action="https://echo.htmlacademy.ru/" method="POST">
+      <div class="modal__wrapper">
+        <h2>Задайте вопрос</h2>
+
+        <button class="modal__close-button" type="button">
+          <span class="visually-hidden">Закрыть окно</span>
+
+          <svg width="14" height="14" viewBox="0 0 16 16">
+            <use xlink:href="img/sprite.svg#icon-button-close"></use>
+          </svg>
+        </button>
+
+        <div class="question-form__field question-form__field--username">
+          <p>Чтобы мы смогли обращаться к вам, оставьте ваше имя</p>
+          <input id="question-form-username" type="text" name="question-form-username" placeholder="Имя" required>
+          <label for="question-form-username">Имя</label>
+        </div>
+
+        <div class="question-form__field question-form__field--user-email">
+          <p>Чтобы вы получили ответ, оставьте ваш e-mail</p>
+          <input id="question-form-user-email" type="email" name="question-form-user-email" placeholder="E-mail" required>
+          <label for="question-form-user-email">E-mail</label>
+        </div>
+
+        <div class="question-form__field question-form__field--textarea">
+          <label for="question-form-user-question">Ваш вопрос:</label>
+          <textarea name="question-form-user-question" id="question-form-user-question" cols="30" rows="5" placeholder="Начните вводить ..."></textarea>
+        </div>
+
+        <div class="question-form__submit-wrapper">
+          <button class="question-form__submit button button--small" type="submit" disabled>Отправить вопрос</button>
+        </div>
+
+        <div class="question-form__field question-form__field--checkbox">
+          <input id="question-form-personal-data-consent" name="question-form-personal-data-consent" type="checkbox" required>
+          <label for="question-form-personal-data-consent">Я согласен с <a href="#">правилами обработки персональных данных</a> и пользовательским соглашением</label>
+        </div>
+      </div>
+    </form>
+
+    <script src="js/vendor.js"></script>
+    <script src="js/main.js"></script>
+  </body>
+
+</html>
