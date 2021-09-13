@@ -243,6 +243,26 @@
     margin-right: 24px;
     padding-right: 25px;
   }
+
+  .catalog__list {
+    width: 100%;
+  }
+
+  .catalog__item {
+    width: 47.77%;
+
+    &:not(:nth-child(3n)) {
+      margin-right: 0;
+    }
+
+    &:not(:nth-child(even)) {
+      margin-right: 4.2%;
+    }
+
+    img {
+      width: 100%;
+    }
+  }
 }
 
 @media (max-width: $mobile-max-width) {
