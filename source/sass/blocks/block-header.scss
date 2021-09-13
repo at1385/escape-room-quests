@@ -1,0 +1,19 @@
+.block-header {
+  span {
+    display: block;
+    margin-bottom: 7px;
+
+    font-size: 14px;
+    color: $bright-main;
+  }
+
+  h1 {
+    margin: 0;
+
+    font-size: 64px;
+    font-weight: 800;
+    line-height: 70px;
+    color: $lightest;
+  }
+}
+
