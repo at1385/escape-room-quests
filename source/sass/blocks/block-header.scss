@@ -26,3 +26,15 @@
   }
 }
 
+@media (max-width: $mobile-max-width) {
+  .block-header {
+    span {
+      margin-bottom: 10px;
+    }
+
+    h1 {
+      font-size: 36px;
+      line-height: 40px;
+    }
+  }
+}
