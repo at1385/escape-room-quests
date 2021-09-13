@@ -1,3 +1,8 @@
+.dragscroll {
+  cursor: -webkit-grab;
+  cursor: grab;
+}
+
 @font-face {
   font-family: "Raleway";
   font-style: normal;
@@ -58,8 +63,6 @@ html {
 
 body {
   position: relative;
-  display: grid;
-  grid-template-rows: auto 1fr auto;
   min-width: 360px;
   min-height: 100vh;
   margin: 0;
@@ -560,6 +563,204 @@ a {
   }
 }
 
+.block-header span {
+  display: block;
+  margin-bottom: 7px;
+  font-size: 14px;
+  color: #f2890f;
+}
+
+.block-header h1 {
+  margin: 0;
+  font-size: 64px;
+  font-weight: 800;
+  line-height: 70px;
+  color: #ffffff;
+}
+
+@media (max-width: 1023px) {
+  .block-header h1 {
+    font-size: 49px;
+    line-height: 54px;
+  }
+}
+
+@media (max-width: 767px) {
+  .block-header span {
+    margin-bottom: 10px;
+  }
+  .block-header h1 {
+    font-size: 36px;
+    line-height: 40px;
+  }
+}
+
+.catalog {
+  padding: 0 135px;
+}
+
+.catalog__block-header {
+  margin-bottom: 50px;
+}
+
+.catalog__filters-wrapper {
+  position: relative;
+  margin-bottom: 28px;
+  overflow: hidden;
+}
+
+.catalog__filters-wrapper::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 50px;
+  height: 40px;
+  background-image: linear-gradient(270deg, #1a1919 0%, rgba(26, 25, 25, 0) 100%);
+}
+
+.catalog__filters-limiter {
+  margin-bottom: -20px;
+  padding-bottom: 20px;
+  overflow-x: scroll;
+}
+
+.catalog__filters {
+  display: flex;
+}
+
+.catalog__filter {
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+  height: 40px;
+  margin-right: 38px;
+  margin-bottom: 10px;
+  padding-right: 39px;
+  border-right: 1px solid rgba(255, 255, 255, 0.32);
+}
+
+.catalog__filter:last-child {
+  position: relative;
+  z-index: 1;
+  margin-right: 0;
+  border-right: none;
+}
+
+.catalog__filter input {
+  position: absolute;
+  clip: rect(1px, 1px, 1px, 1px);
+  padding: 0;
+  border: 0;
+  height: 1px;
+  width: 1px;
+  overflow: hidden;
+}
+
+.catalog__filter input:focus + label {
+  outline-color: rgba(255, 255, 255, 0.3);
+}
+
+.catalog__filter input:checked + label {
+  border-bottom-color: #f2890f;
+}
+
+.catalog__filter input:checked:hover + label {
+  cursor: default;
+}
+
+.catalog__filter input:checked:hover + label + svg {
+  fill: #ffffff;
+  cursor: default;
+}
+
+.catalog__filter input:checked:active + label {
+  color: #e5e5e5;
+  outline-color: rgba(255, 255, 255, 0.3);
+}
+
+.catalog__filter label {
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 24px;
+  letter-spacing: -0.02em;
+  word-break: break-all;
+  border-bottom: 2px solid transparent;
+  outline: 1px dotted transparent;
+  outline-offset: 3px;
+  cursor: pointer;
+}
+
+.catalog__filter label:hover + svg {
+  fill: #f2890f;
+}
+
+.catalog__filter label:active {
+  color: rgba(229, 229, 229, 0.1);
+}
+
+.catalog__filter-icon {
+  order: -1;
+  margin-right: 14px;
+  fill: #ffffff;
+}
+
+@media (max-width: 1023px) {
+  .catalog {
+    padding: 0 125px;
+  }
+  .catalog__filter {
+    margin-right: 24px;
+    padding-right: 25px;
+  }
+}
+
+@media (max-width: 767px) {
+  .catalog {
+    max-width: 615px;
+    min-width: 328px;
+    padding: 0 16px;
+  }
+  .catalog__block-header {
+    margin-bottom: 40px;
+  }
+  .catalog__filters-wrapper {
+    margin-bottom: 30px;
+  }
+  .catalog__filters-wrapper::before {
+    height: 32px;
+  }
+  .catalog__filter {
+    height: 32px;
+    margin-right: 16px;
+    padding-right: 13px;
+  }
+  .catalog__filter label {
+    line-height: 23px;
+  }
+  .catalog__filter-icon {
+    height: 24px;
+  }
+  .catalog__filter-icon--all {
+    width: 21px;
+  }
+  .catalog__filter-icon--adventures {
+    width: 29px;
+  }
+  .catalog__filter-icon--horrors {
+    width: 24px;
+  }
+  .catalog__filter-icon--mysticism {
+    width: 24px;
+  }
+  .catalog__filter-icon--detective {
+    width: 32px;
+  }
+  .catalog__filter-icon--sci-fi {
+    width: 22px;
+  }
+}
+
 .page-main {
   display: flex;
   height: 100%;
@@ -590,7 +791,6 @@ a {
 
 .page-main__wrapper {
   width: 100%;
-  margin: auto;
   padding: 0 135px;
 }
 
@@ -606,6 +806,8 @@ a {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
+  min-height: 100%;
+  margin: auto;
 }
 
 .page-main__wrapper--index h1 {
@@ -622,7 +824,12 @@ a {
 }
 
 .page-main__wrapper--modal-page {
+  margin: auto;
   padding: 0 32px;
+}
+
+.page-main__catalog {
+  margin-top: 20px;
 }
 
 @media (max-width: 1023px) {
@@ -639,6 +846,7 @@ a {
 
 @media (max-width: 767px) {
   .page-main {
+    padding-top: 76px;
     padding-bottom: 65px;
     background-repeat: no-repeat;
     background-position: 50% 50%;
@@ -681,6 +889,9 @@ a {
   }
   .page-main__wrapper--modal-page {
     padding: 0 16px;
+  }
+  .page-main__catalog {
+    margin-top: 10px;
   }
   .page-main__button {
     margin: 0 auto;

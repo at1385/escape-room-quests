@@ -1,0 +1,183 @@
+.catalog {
+  padding: 0 135px;
+}
+
+.catalog__block-header {
+  margin-bottom: 50px;
+}
+
+.catalog__filters-wrapper {
+  position: relative;
+  margin-bottom: 28px;
+
+  overflow: hidden;
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+
+    width: 50px;
+    height: 40px;
+
+    background-image: linear-gradient(270deg, #1a1919 0%, rgba(#1a1919, 0) 100%);
+  }
+}
+
+.catalog__filters-limiter {
+  margin-bottom: -20px;
+  padding-bottom: 20px;
+
+  overflow-x: scroll;
+}
+
+.catalog__filters {
+  display: flex;
+}
+
+.catalog__filter {
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+  height: 40px;
+  margin-right: 38px;
+  margin-bottom: 10px;
+  padding-right: 39px;
+
+  &:last-child {
+    position: relative;
+    z-index: 1;
+
+    margin-right: 0;
+    border-right: none;
+  }
+
+  border-right: 1px solid rgba($lightest, 0.32);
+
+  input {
+    @include visually-hidden;
+
+    &:focus + label {
+      outline-color: rgba($lightest, 0.3);
+    }
+
+    &:checked + label {
+      border-bottom-color: $bright-main;
+    }
+
+    &:checked:hover + label {
+      cursor: default;
+    }
+
+    &:checked:hover + label + svg {
+      fill: $lightest;
+
+      cursor: default;
+    }
+
+    &:checked:active + label {
+      color: $light;
+
+      outline-color: rgba($lightest, 0.3);
+    }
+  }
+
+  label {
+    font-size: 14px;
+    font-weight: 700;
+    line-height: 24px;
+    letter-spacing: -0.02em;
+    word-break: break-all;
+
+    border-bottom: 2px solid transparent;
+    outline: 1px dotted transparent;
+    outline-offset: 3px;
+
+    cursor: pointer;
+
+    &:hover + svg {
+      fill: $bright-main;
+    }
+
+    &:active {
+      color: rgba($light, 0.1);
+    }
+  }
+}
+
+.catalog__filter-icon {
+  order: -1;
+  margin-right: 14px;
+
+  fill: $lightest;
+}
+
+@media (max-width: $tablet-max-width) {
+  .catalog {
+    padding: 0 125px;
+  }
+
+  .catalog__filter {
+    margin-right: 24px;
+    padding-right: 25px;
+  }
+}
+
+@media (max-width: $mobile-max-width) {
+  .catalog {
+    max-width: 615px;
+    min-width: 328px;
+    padding: 0 16px;
+  }
+
+  .catalog__block-header {
+    margin-bottom: 40px;
+  }
+
+  .catalog__filters-wrapper {
+    margin-bottom: 30px;
+
+    &::before {
+      height: 32px;
+    }
+  }
+
+  .catalog__filter {
+    height: 32px;
+    margin-right: 16px;
+    padding-right: 13px;
+
+    label {
+      line-height: 23px;
+    }
+  }
+
+  .catalog__filter-icon {
+    height: 24px;
+
+    &--all {
+      width: 21px;
+    }
+
+    &--adventures {
+      width: 29px;
+    }
+
+    &--horrors {
+      width: 24px;
+    }
+
+    &--mysticism {
+      width: 24px;
+    }
+
+    &--detective {
+      width: 32px;
+    }
+
+    &--sci-fi {
+      width: 22px;
+    }
+  }
+}
