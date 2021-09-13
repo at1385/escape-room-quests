@@ -596,6 +596,7 @@ a {
 }
 
 .catalog {
+  width: 100%;
   padding: 0 135px;
 }
 
@@ -705,6 +706,114 @@ a {
   fill: #ffffff;
 }
 
+.catalog__list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  width: 98.55%;
+}
+
+.catalog__item {
+  position: relative;
+  width: 31.85%;
+  height: 232px;
+  margin-bottom: 32px;
+  border-radius: 3px;
+  box-shadow: 2px 2px 24px rgba(141, 80, 8, 0.12);
+  overflow: hidden;
+}
+
+.catalog__item:not(:nth-child(3n)) {
+  margin-right: 2.2%;
+}
+
+.catalog__item a {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+  padding: 20px 16px;
+  font-size: 13px;
+  line-height: 19px;
+  color: rgba(229, 229, 229, 0.8);
+  word-wrap: break-word;
+  font-feature-settings: "pnum" on, "lnum" on;
+}
+
+.catalog__item h2 {
+  width: 93%;
+  margin: 0;
+  margin-top: auto;
+  margin-left: 3px;
+  margin-bottom: 10px;
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 29px;
+  color: #ffffff;
+}
+
+.catalog__item p {
+  position: relative;
+  margin: 0;
+  margin-bottom: 6px;
+  padding-left: 25px;
+}
+
+.catalog__item p::before {
+  content: "";
+  position: absolute;
+  top: 2px;
+  left: 6px;
+  width: 11px;
+  height: 14px;
+  background-image: url("../img/bg-decor-location.svg");
+  background-repeat: no-repeat;
+  background-size: 11px 14px;
+}
+
+.catalog__item ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  margin-left: 5px;
+}
+
+.catalog__item li {
+  display: flex;
+  margin-right: 12px;
+  padding-right: 10px;
+  border-right: 1px solid rgba(255, 255, 255, 0.5);
+}
+
+.catalog__item li:last-child {
+  border-right: none;
+}
+
+.catalog__item img {
+  height: 100%;
+  vertical-align: top;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+.catalog__item-icon {
+  margin-right: 8px;
+  fill: transparent;
+  stroke: #ffffff;
+}
+
+.catalog__item-icon--puzzle {
+  fill: #ffffff;
+}
+
 @media (max-width: 1023px) {
   .catalog {
     padding: 0 125px;
@@ -712,6 +821,21 @@ a {
   .catalog__filter {
     margin-right: 24px;
     padding-right: 25px;
+  }
+  .catalog__list {
+    width: 100%;
+  }
+  .catalog__item {
+    width: 47.77%;
+  }
+  .catalog__item:not(:nth-child(3n)) {
+    margin-right: 0;
+  }
+  .catalog__item:not(:nth-child(even)) {
+    margin-right: 4.2%;
+  }
+  .catalog__item img {
+    width: 100%;
   }
 }
 
@@ -758,6 +882,13 @@ a {
   }
   .catalog__filter-icon--sci-fi {
     width: 22px;
+  }
+  .catalog__item {
+    width: 100%;
+    margin-bottom: 16px;
+  }
+  .catalog__item:not(:nth-child(even)) {
+    margin-right: 0;
   }
 }
 
