@@ -66,7 +66,34 @@
       </div>
     </header>
 
-    <main class="page-main"></main>
+    <main class="page-main page-main--order-maniac">
+      <form class="page-main__order-form order-form container" id="order-form" action="https://echo.htmlacademy.ru/" method="POST">
+        <header class="order-form__block-header block-header block-header--large block-header--low">
+          <a class="block-header__redirect-link" href="catalog.html">
+            <svg width="9" height="13" viewBox="0 0 8 12">
+              <use xlink:href="img/sprite.svg#icon-decor-arrow-stroke"></use>
+            </svg>
+
+            <span>Описание</span>
+          </a>
+
+          <span>выбранный квест</span>
+          <h1>Маньяк</h1>
+        </header>
+
+        <div class="order-form__date-chooser">
+          <button class="order-form__button" id="order-form-date-chooser-button" type="button">
+            Выберите дату
+
+            <svg width="5" height="7">
+              <use xlink:href="img/sprite.svg#icon-decor-arrow-fill"></use>
+            </svg>
+          </button>
+
+          <span class="order-form__date-chooser-label">22 марта</span>
+        </div>
+      </form>
+    </main>
 
     <footer class="page-footer container">
       <ul class="page-footer__socials socials">
