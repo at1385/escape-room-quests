@@ -1,0 +1,76 @@
+.order-form {
+  width: 100%;
+  margin-top: 35px;
+  padding-right: 150px;
+  padding-left: 136px;
+}
+
+.order-form__block-header {
+  margin-bottom: 13px;
+}
+
+.order-form__date-chooser {
+  display: flex;
+  align-items: center;
+  min-height: 76px;
+  padding-top: 33px;
+  padding-left: 47px;
+
+  border-top: 1px solid rgba($light, 0.25);
+}
+
+.order-form__button {
+  width: 120px;
+  min-height: 34px;
+  margin-right: 24px;
+  padding: 0;
+
+  font: inherit;
+  color: $lightest;
+
+  background-color: transparent;
+
+  border: none;
+  border-bottom: 2px solid $bright-main;
+  outline: none;
+
+  cursor: pointer;
+
+  svg {
+    margin-left: 1px;
+
+    fill: $lightest;
+  }
+
+  &:hover,
+  &:focus {
+    svg {
+      fill: $bright-main;
+    }
+  }
+
+  &:focus {
+    outline: 1px dotted rgba($bright-main, 0.5);
+    outline-offset: 4px;
+  }
+
+  &:active {
+    opacity: 0.3;
+  }
+}
+
+.order-form__date-chooser-label {
+  display: inline-block;
+  padding-bottom: 4px;
+
+  font-size: 28px;
+  font-weight: 800;
+  line-height: 38px;
+  vertical-align: top;
+  font-feature-settings: "pnum" off, "lnum" off;
+
+  &--hidden {
+    display: none;
+  }
+}
+

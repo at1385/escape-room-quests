@@ -54,6 +54,14 @@
     }
   }
 
+  &--order-maniac {
+    background-image: url("../img/bg-quest-maniac-blur.jpg");
+
+    @media (min-resolution: $retina-dpi), (min-resolution: $retina-dppx) {
+      background-image: url("../img/bg-quest-maniac-blur@2x.jpg");
+    }
+  }
+
   &--modal-page {
     padding-bottom: 45px;
   }

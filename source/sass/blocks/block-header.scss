@@ -29,6 +29,13 @@
       text-transform: uppercase;
     }
   }
+
+  &--low {
+    span {
+      margin-left: 6px;
+      margin-bottom: 7px;
+    }
+  }
 }
 
 .block-header__redirect-link {
