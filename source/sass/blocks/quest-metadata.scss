@@ -53,3 +53,52 @@
   }
 }
 
+@media (max-width: $mobile-max-width) {
+  .quest-metadata {
+    &--large {
+      margin: 0 auto;
+
+      line-height: 17px;
+
+      li {
+        position: relative;
+
+        flex-direction: column;
+        width: 96px;
+
+        text-align: center;
+
+        border-right: none;
+
+        &:last-child {
+          width: 72px;
+
+          &::before {
+            display: none;
+          }
+        }
+
+        &::before {
+          content: "";
+          position: absolute;
+          top: 0;
+          right: 0;
+
+          width: 1px;
+          height: 48px;
+
+          background-color: rgba($lightest, 0.36);
+        }
+      }
+
+      .quest-metadata__item-icon {
+        margin-right: 0;
+        margin-bottom: 6px;
+
+        &--time {
+          margin-bottom: 10px;
+        }
+      }
+    }
+  }
+}
