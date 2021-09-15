@@ -71,6 +71,8 @@ body {
   font-size: 15px;
   line-height: 1.5;
   color: #e5e5e5;
+  letter-spacing: -0.01em;
+  font-feature-settings: "pnum" on, "lnum" on;
   background-color: #1c1c1c;
   background-image: linear-gradient(0deg, #141414 0%, #1f1d1d 100%);
   background-attachment: fixed;
@@ -501,7 +503,7 @@ a {
   display: inline-block;
   min-width: 252px;
   max-width: 468px;
-  padding: 22px 52px;
+  padding: 22px 48px;
   font-size: 17px;
   font-weight: 800;
   line-height: 20px;
@@ -550,16 +552,13 @@ a {
 }
 
 @media (max-width: 767px) {
-  .button {
+  .button--small {
     min-width: 185px;
     max-width: 328px;
-    padding: 15px 32px;
+    padding: 15px 28px;
     font-size: 14px;
     line-height: 16px;
     border-radius: 47px;
-  }
-  .button--small {
-    padding: 15px 28px;
   }
 }
 
@@ -578,10 +577,30 @@ a {
   color: #ffffff;
 }
 
+.block-header--large span {
+  margin-bottom: 19px;
+}
+
+.block-header--large h1 {
+  font-size: 92px;
+  font-weight: 900;
+  line-height: 87px;
+  letter-spacing: -0.03em;
+  text-transform: uppercase;
+}
+
+.block-header__redirect-link {
+  display: none;
+}
+
 @media (max-width: 1023px) {
   .block-header h1 {
     font-size: 49px;
     line-height: 54px;
+  }
+  .block-header--large h1 {
+    font-size: 64px;
+    line-height: 61px;
   }
 }
 
@@ -592,6 +611,47 @@ a {
   .block-header h1 {
     font-size: 36px;
     line-height: 40px;
+  }
+  .block-header--large {
+    display: flex;
+    flex-direction: column;
+  }
+  .block-header--large h1 {
+    font-size: 42px;
+    line-height: 46px;
+    letter-spacing: 0;
+  }
+  .block-header__redirect-link {
+    display: inline-flex;
+    align-items: center;
+  }
+  .block-header__redirect-link svg {
+    margin-right: 5px;
+    fill: none;
+    stroke: #ffffff;
+  }
+  .block-header__redirect-link span {
+    margin-bottom: 0;
+    font-size: 12px;
+    font-weight: 700;
+    line-height: 17px;
+    color: #e5e5e5;
+    letter-spacing: 0.03em;
+    text-transform: uppercase;
+  }
+  .block-header__redirect-link--quests {
+    margin-bottom: auto;
+  }
+  .block-header__redirect-link:hover, .block-header__redirect-link:focus {
+    outline-color: rgba(242, 137, 15, 0.6);
+    outline-offset: 3px;
+  }
+  .block-header__redirect-link:hover svg, .block-header__redirect-link:focus svg {
+    stroke: #f2890f;
+  }
+  .block-header__redirect-link:active {
+    outline: none;
+    opacity: 0.3;
   }
 }
 
@@ -777,24 +837,8 @@ a {
   background-size: 11px 14px;
 }
 
-.catalog__item ul {
-  margin: 0;
-  padding: 0;
-  list-style: none;
-  display: flex;
-  flex-wrap: wrap;
+.catalog__item .catalog__quest-metadata {
   margin-left: 5px;
-}
-
-.catalog__item li {
-  display: flex;
-  margin-right: 12px;
-  padding-right: 10px;
-  border-right: 1px solid rgba(255, 255, 255, 0.5);
-}
-
-.catalog__item li:last-child {
-  border-right: none;
 }
 
 .catalog__item img {
@@ -802,16 +846,6 @@ a {
   vertical-align: top;
   -o-object-fit: cover;
      object-fit: cover;
-}
-
-.catalog__item-icon {
-  margin-right: 8px;
-  fill: transparent;
-  stroke: #ffffff;
-}
-
-.catalog__item-icon--puzzle {
-  fill: #ffffff;
 }
 
 @media (max-width: 1023px) {
@@ -892,6 +926,169 @@ a {
   }
 }
 
+.quest-metadata {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.quest-metadata li {
+  display: flex;
+  align-items: center;
+  margin-right: 12px;
+  padding-right: 10px;
+  border-right: 1px solid rgba(255, 255, 255, 0.5);
+}
+
+.quest-metadata li:last-child {
+  margin-right: 0;
+  padding-right: 0;
+  border-right: none;
+}
+
+.quest-metadata--large {
+  font-size: 14px;
+  font-weight: 400;
+}
+
+.quest-metadata--large li {
+  min-height: 36px;
+  margin-right: 24px;
+  margin-bottom: 10px;
+  padding-right: 23px;
+}
+
+.quest-metadata--large .quest-metadata__item-icon {
+  margin-right: 10px;
+}
+
+.quest-metadata__item-icon {
+  margin-right: 8px;
+  fill: none;
+  stroke: #ffffff;
+}
+
+.quest-metadata__item-icon--time {
+  fill: #ffffff;
+  stroke: none;
+}
+
+.quest-metadata__item-icon--difficult {
+  fill: #ffffff;
+}
+
+@media (max-width: 767px) {
+  .quest-metadata--large {
+    margin: 0 auto;
+    line-height: 17px;
+  }
+  .quest-metadata--large li {
+    position: relative;
+    flex-direction: column;
+    width: 96px;
+    text-align: center;
+    border-right: none;
+  }
+  .quest-metadata--large li:last-child {
+    width: 72px;
+  }
+  .quest-metadata--large li:last-child::before {
+    display: none;
+  }
+  .quest-metadata--large li::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 1px;
+    height: 48px;
+    background-color: rgba(255, 255, 255, 0.36);
+  }
+  .quest-metadata--large .quest-metadata__item-icon {
+    margin-right: 0;
+    margin-bottom: 6px;
+  }
+  .quest-metadata--large .quest-metadata__item-icon--time {
+    margin-bottom: 10px;
+  }
+}
+
+.specific-quest {
+  width: 100%;
+  margin-top: 50px;
+  margin-bottom: auto;
+  padding: 0 86px;
+}
+
+.specific-quest__column {
+  max-width: 680px;
+  margin-left: auto;
+}
+
+.specific-quest__column p {
+  width: 76.8%;
+  margin: 0;
+  margin-bottom: 21px;
+  margin-left: 31px;
+}
+
+.specific-quest__column p:last-of-type {
+  margin-bottom: 42px;
+}
+
+.specific-quest__block-header {
+  margin-top: auto;
+  margin-bottom: 21px;
+}
+
+.specific-quest__quest-metadata {
+  margin-bottom: 8px;
+  margin-left: 31px;
+}
+
+.specific-quest__button {
+  margin-left: 31px;
+}
+
+@media (max-width: 1023px) {
+  .specific-quest__column {
+    max-width: 560px;
+  }
+  .specific-quest__column p {
+    width: 100%;
+  }
+}
+
+@media (max-width: 767px) {
+  .specific-quest {
+    margin-top: 11px;
+    padding: 0 16px;
+  }
+  .specific-quest__block-header {
+    min-height: 381px;
+  }
+  .specific-quest__column {
+    margin-right: auto;
+  }
+  .specific-quest__column p {
+    width: 101%;
+    margin-bottom: 15px;
+    margin-left: 0;
+  }
+  .specific-quest__column p:last-of-type {
+    margin-bottom: 25px;
+  }
+  .specific-quest__quest-metadata {
+    margin-bottom: 3px;
+    margin-left: 9px;
+  }
+  .specific-quest__button {
+    margin-left: 0;
+  }
+}
+
 .page-main {
   display: flex;
   height: 100%;
@@ -909,6 +1106,52 @@ a {
 @media (-webkit-min-device-pixel-ratio: 1.5), (min-resolution: 144dpi), (min-resolution: 1.5dppx) {
   .page-main--index {
     background-image: url("../img/bg-index@2x.jpg");
+  }
+}
+
+.page-main--quest {
+  padding: 0;
+  padding-top: 94px;
+  padding-bottom: 35px;
+}
+
+.page-main--maniac {
+  background-image: url("../img/bg-quest-maniac.jpg");
+}
+
+@media (-webkit-min-device-pixel-ratio: 1.5), (min-resolution: 144dpi), (min-resolution: 1.5dppx) {
+  .page-main--maniac {
+    background-image: url("../img/bg-quest-maniac@2x.jpg");
+  }
+}
+
+.page-main--old-mansion {
+  background-image: url("../img/bg-quest-old-mansion.jpg");
+}
+
+@media (-webkit-min-device-pixel-ratio: 1.5), (min-resolution: 144dpi), (min-resolution: 1.5dppx) {
+  .page-main--old-mansion {
+    background-image: url("../img/bg-quest-old-mansion@2x.jpg");
+  }
+}
+
+.page-main--ritual {
+  background-image: url("../img/bg-quest-ritual.jpg");
+}
+
+@media (-webkit-min-device-pixel-ratio: 1.5), (min-resolution: 144dpi), (min-resolution: 1.5dppx) {
+  .page-main--ritual {
+    background-image: url("../img/bg-quest-ritual@2x.jpg");
+  }
+}
+
+.page-main--fatal-experiment {
+  background-image: url("../img/bg-quest-fatal-experiment.jpg");
+}
+
+@media (-webkit-min-device-pixel-ratio: 1.5), (min-resolution: 144dpi), (min-resolution: 1.5dppx) {
+  .page-main--fatal-experiment {
+    background-image: url("../img/bg-quest-fatal-experiment@2x.jpg");
   }
 }
 
@@ -964,6 +1207,12 @@ a {
 }
 
 @media (max-width: 1023px) {
+  .page-main--maniac {
+    background-position: 65% 50%;
+  }
+  .page-main--ritual, .page-main--fatal-experiment {
+    background-position: 85% 50%;
+  }
   .page-main--modal-page {
     padding-top: 90px;
   }
@@ -991,6 +1240,73 @@ a {
 @media (max-width: 767px) and (-webkit-min-device-pixel-ratio: 1.5), (max-width: 767px) and (min-resolution: 144dpi), (max-width: 767px) and (min-resolution: 1.5dppx) {
   .page-main--index {
     background-image: url("../img/bg-index-mobile@2x.jpg");
+  }
+}
+
+@media (max-width: 767px) {
+  .page-main--quest {
+    position: relative;
+    padding-bottom: 59px;
+    background-color: #23150e;
+    background-position: 50% top;
+    background-size: 767px auto;
+  }
+  .page-main--quest::before {
+    content: "";
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 64px;
+    background-image: linear-gradient(rgba(99, 60, 15, 0) 23.22%, rgba(99, 60, 15, 0) 37.46%, #24150e 89.63%, #1a140d 106.79%);
+  }
+  .page-main--maniac {
+    background-image: url("../img/bg-quest-maniac-mobile.jpg");
+    background-position: 42% top;
+  }
+}
+
+@media (max-width: 767px) and (-webkit-min-device-pixel-ratio: 1.5), (max-width: 767px) and (min-resolution: 144dpi), (max-width: 767px) and (min-resolution: 1.5dppx) {
+  .page-main--maniac {
+    background-image: url("../img/bg-quest-maniac-mobile@2x.jpg");
+  }
+}
+
+@media (max-width: 767px) {
+  .page-main--old-mansion {
+    background-image: url("../img/bg-quest-old-mansion-mobile.jpg");
+  }
+}
+
+@media (max-width: 767px) and (-webkit-min-device-pixel-ratio: 1.5), (max-width: 767px) and (min-resolution: 144dpi), (max-width: 767px) and (min-resolution: 1.5dppx) {
+  .page-main--old-mansion {
+    background-image: url("../img/bg-quest-old-mansion-mobile@2x.jpg");
+  }
+}
+
+@media (max-width: 767px) {
+  .page-main--ritual {
+    background-image: url("../img/bg-quest-ritual-mobile.jpg");
+    background-position: 22% top;
+  }
+}
+
+@media (max-width: 767px) and (-webkit-min-device-pixel-ratio: 1.5), (max-width: 767px) and (min-resolution: 144dpi), (max-width: 767px) and (min-resolution: 1.5dppx) {
+  .page-main--ritual {
+    background-image: url("../img/bg-quest-ritual-mobile@2x.jpg");
+  }
+}
+
+@media (max-width: 767px) {
+  .page-main--fatal-experiment {
+    background-image: url("../img/bg-quest-fatal-experiment-mobile.jpg");
+    background-position: 67% top;
+  }
+}
+
+@media (max-width: 767px) and (-webkit-min-device-pixel-ratio: 1.5), (max-width: 767px) and (min-resolution: 144dpi), (max-width: 767px) and (min-resolution: 1.5dppx) {
+  .page-main--fatal-experiment {
+    background-image: url("../img/bg-quest-fatal-experiment-mobile@2x.jpg");
   }
 }
 

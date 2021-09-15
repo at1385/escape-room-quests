@@ -193,25 +193,8 @@
     }
   }
 
-  ul {
-    @include list-reset;
-
-    display: flex;
-    flex-wrap: wrap;
+  .catalog__quest-metadata {
     margin-left: 5px;
-  }
-
-  li {
-    display: flex;
-
-    margin-right: 12px;
-    padding-right: 10px;
-
-    border-right: 1px solid rgba($lightest, 0.5);
-
-    &:last-child {
-      border-right: none;
-    }
   }
 
   img {
@@ -220,17 +203,6 @@
     vertical-align: top;
 
     object-fit: cover;
-  }
-}
-
-.catalog__item-icon {
-  margin-right: 8px;
-
-  fill: transparent;
-  stroke: $lightest;
-
-  &--puzzle {
-    fill: $lightest;
   }
 }
 

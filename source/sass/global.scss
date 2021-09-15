@@ -20,6 +20,8 @@ body {
   font-size: 15px;
   line-height: 1.5;
   color: $light;
+  letter-spacing: -0.01em;
+  font-feature-settings: "pnum" on, "lnum" on;
 
   background-color: $darker;
   background-image: linear-gradient(0deg, $darkest 0%, $dark 100%);
