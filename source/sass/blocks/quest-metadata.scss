@@ -1,0 +1,55 @@
+.quest-metadata {
+  @include list-reset;
+
+  display: flex;
+  flex-wrap: wrap;
+
+  li {
+    display: flex;
+    align-items: center;
+
+    margin-right: 12px;
+    padding-right: 10px;
+
+    border-right: 1px solid rgba($lightest, 0.5);
+
+    &:last-child {
+      margin-right: 0;
+      padding-right: 0;
+      border-right: none;
+    }
+  }
+
+  &--large {
+    font-size: 14px;
+    font-weight: 400;
+
+    li {
+      min-height: 36px;
+      margin-right: 24px;
+      margin-bottom: 10px;
+      padding-right: 23px;
+    }
+
+    .quest-metadata__item-icon {
+      margin-right: 10px;
+    }
+  }
+}
+
+.quest-metadata__item-icon {
+  margin-right: 8px;
+
+  fill: none;
+  stroke: $lightest;
+
+  &--time {
+    fill: $lightest;
+    stroke: none;
+  }
+
+  &--difficult {
+    fill: $lightest;
+  }
+}
+

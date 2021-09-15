@@ -1,0 +1,39 @@
+.specific-quest {
+  width: 100%;
+  margin-top: 50px;
+  margin-bottom: auto;
+  padding: 0 86px;
+}
+
+.specific-quest__column {
+  max-width: 680px;
+  margin-left: auto;
+
+  p {
+    width: 76.8%;
+    margin: 0;
+
+    margin-bottom: 21px;
+
+    &:last-of-type {
+      margin-bottom: 42px;
+    }
+
+    margin-left: 31px;
+  }
+}
+
+.specific-quest__block-header {
+  margin-top: auto;
+  margin-bottom: 21px;
+}
+
+.specific-quest__quest-metadata {
+  margin-bottom: 8px;
+  margin-left: 31px;
+}
+
+.specific-quest__button {
+  margin-left: 31px;
+}
+

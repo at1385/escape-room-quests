@@ -16,6 +16,44 @@
     }
   }
 
+  &--quest {
+    padding: 0;
+    padding-top: 94px;
+    padding-bottom: 35px;
+  }
+
+  &--maniac {
+    background-image: url("../img/bg-quest-maniac.jpg");
+
+    @media (min-resolution: $retina-dpi), (min-resolution: $retina-dppx) {
+      background-image: url("../img/bg-quest-maniac@2x.jpg");
+    }
+  }
+
+  &--old-mansion {
+    background-image: url("../img/bg-quest-old-mansion.jpg");
+
+    @media (min-resolution: $retina-dpi), (min-resolution: $retina-dppx) {
+      background-image: url("../img/bg-quest-old-mansion@2x.jpg");
+    }
+  }
+
+  &--ritual {
+    background-image: url("../img/bg-quest-ritual.jpg");
+
+    @media (min-resolution: $retina-dpi), (min-resolution: $retina-dppx) {
+      background-image: url("../img/bg-quest-ritual@2x.jpg");
+    }
+  }
+
+  &--fatal-experiment {
+    background-image: url("../img/bg-quest-fatal-experiment.jpg");
+
+    @media (min-resolution: $retina-dpi), (min-resolution: $retina-dppx) {
+      background-image: url("../img/bg-quest-fatal-experiment@2x.jpg");
+    }
+  }
+
   &--modal-page {
     padding-bottom: 45px;
   }

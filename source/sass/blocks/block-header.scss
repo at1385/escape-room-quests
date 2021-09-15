@@ -15,6 +15,24 @@
     line-height: 70px;
     color: $lightest;
   }
+
+  &--large {
+    span {
+      margin-bottom: 19px;
+    }
+
+    h1 {
+      font-size: 92px;
+      font-weight: 900;
+      line-height: 87px;
+      letter-spacing: -0.03em;
+      text-transform: uppercase;
+    }
+  }
+}
+
+.block-header__redirect-link {
+  display: none;
 }
 
 @media (max-width: $tablet-max-width) {
