@@ -37,3 +37,13 @@
   margin-left: 31px;
 }
 
+@media (max-width: $tablet-max-width) {
+  .specific-quest__column {
+    max-width: 560px;
+
+    p {
+      width: 100%;
+    }
+  }
+}
+

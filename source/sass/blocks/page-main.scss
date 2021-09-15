@@ -110,6 +110,15 @@
 
 @media (max-width: $tablet-max-width) {
   .page-main {
+    &--maniac {
+      background-position: 65% 50%;
+    }
+
+    &--ritual,
+    &--fatal-experiment {
+      background-position: 85% 50%;
+    }
+
     &--modal-page {
       padding-top: 90px;
     }
