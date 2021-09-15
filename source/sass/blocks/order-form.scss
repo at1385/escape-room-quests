@@ -74,3 +74,16 @@
   }
 }
 
+@media (max-width: $tablet-max-width) {
+  .order-form {
+    margin-top: 35px;
+    padding: 0 86px;
+  }
+
+  .order-form__date-chooser {
+    min-height: 67px;
+    padding-top: 24px;
+    padding-left: 35px;
+  }
+}
+
