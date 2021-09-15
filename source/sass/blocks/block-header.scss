@@ -85,11 +85,18 @@
         letter-spacing: 0;
       }
     }
+
+    &--low {
+      span {
+        margin-left: 0;
+      }
+    }
   }
 
   .block-header__redirect-link {
     display: inline-flex;
     align-items: center;
+    margin-bottom: 29px;
 
     svg {
       margin-right: 5px;

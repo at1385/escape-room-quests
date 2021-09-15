@@ -87,3 +87,21 @@
   }
 }
 
+@media (max-width: $mobile-max-width) {
+  .order-form {
+    max-width: 613px;
+    min-width: 360px;
+    margin-top: 13px;
+    padding: 0 16px;
+  }
+
+  .order-form__date-chooser {
+    min-height: 72px;
+    padding-top: 29px;
+    padding-left: 0;
+  }
+
+  .order-form__button {
+    margin-right: 16px;
+  }
+}
