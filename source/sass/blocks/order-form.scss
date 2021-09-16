@@ -225,6 +225,13 @@
     min-height: 67px;
     padding-top: 24px;
     padding-left: 35px;
+
+  .order-form__time-chooser {
+    padding-left: 0;
+  }
+
+  .order-form__time-list {
+    width: 100%;
   }
 }
 
