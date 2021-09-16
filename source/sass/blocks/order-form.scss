@@ -68,9 +68,150 @@
   line-height: 38px;
   vertical-align: top;
   font-feature-settings: "pnum" off, "lnum" off;
+}
 
-  &--hidden {
-    display: none;
+.order-form__time-chooser {
+  padding-left: 47px;
+}
+
+.order-form__time-chooser-info {
+  @include list-reset;
+  display: flex;
+  flex-wrap: wrap;
+  margin-bottom: 38px;
+
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 15px;
+  color: rgba($lightest, 0.82);
+}
+
+.order-form__time-chooser-info-item {
+  position: relative;
+  margin-right: 25px;
+  margin-bottom: 10px;
+  padding-left: 20px;
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    width: 15px;
+    height: 15px;
+
+    border: 2px solid rgba($lightest, 0.82);
+    border-radius: 3px;
+  }
+
+  &--occupied {
+    &::before {
+      background-color: $bright-main;
+      background-image: linear-gradient(158.6deg, $bright-main 9.78%, #b8600f 79.81%);
+
+      border-color: transparent;
+    }
+  }
+
+  &--chosen {
+    &::before {
+      background-color: $bright-success;
+      background-image: linear-gradient(180deg, $bright-success 0%, #13ba19 100%);
+
+      border-color: transparent;
+    }
+  }
+}
+
+.order-form__time-list {
+  @include list-reset;
+  display: flex;
+  flex-wrap: wrap;
+  width: 83%;
+}
+
+.order-form__time-field {
+  display: flex;
+  flex-direction: column;
+  width: 110px;
+  margin-right: 32px;
+  margin-bottom: 32px;
+
+  color: $lightest;
+  text-align: center;
+
+  input {
+    @include visually-hidden;
+
+    &:focus + label {
+      outline-color: rgba($bright-success, 0.4);
+      outline-offset: 5px;
+    }
+
+    &:checked + label,
+    &:disabled + label {
+      padding-top: 8px;
+      padding-bottom: 8px;
+
+      background: linear-gradient(180deg, $bright-success 0%, #13ba19 100%);
+
+      border: none;
+      cursor: default;
+    }
+
+    &:checked + label {
+      background: linear-gradient(180deg, $bright-success 0%, #13ba19 100%);
+    }
+
+    &:disabled + label {
+      background-image: linear-gradient(158.6deg, $bright-main 9.78%, #b8600f 79.81%);
+    }
+  }
+
+  label {
+    display: inline-block;
+    width: 110px;
+    height: 38px;
+    margin-bottom: 3px;
+    padding: 6px;
+
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 23px;
+    letter-spacing: 0.05em;
+
+    border: 2px solid rgba($lightest, 0.82);
+    border-radius: 65px;
+    outline: 1px dashed transparent;
+    outline-offset: 3px;
+
+    cursor: pointer;
+  }
+
+  p {
+    position: relative;
+
+    max-width: 100%;
+    margin: 0 auto;
+    padding-right: 10px;
+
+    font-size: 12px;
+    line-height: 17px;
+    word-wrap: break-word;
+
+    &::before {
+      content: "";
+      position: absolute;
+      bottom: 4px;
+      right: 0;
+
+      width: 7px;
+      height: 9px;
+
+      background-image: url("../img/bg-logo-ruble.svg");
+      background-repeat: no-repeat;
+    }
   }
 }
 
