@@ -7,6 +7,13 @@
   margin-top: 35px;
   padding-right: 150px;
   padding-left: 136px;
+
+  &--js {
+    .order-form__date-chooser-label,
+    .order-form__time-chooser {
+      display: none;
+    }
+  }
 }
 
 .order-form__block-header {
