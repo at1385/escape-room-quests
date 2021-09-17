@@ -54,6 +54,14 @@
     }
   }
 
+  &--order-maniac {
+    background-image: url("../img/bg-quest-maniac-blur.jpg");
+
+    @media (min-resolution: $retina-dpi), (min-resolution: $retina-dppx) {
+      background-image: url("../img/bg-quest-maniac-blur@2x.jpg");
+    }
+  }
+
   &--modal-page {
     padding-bottom: 45px;
   }
@@ -206,6 +214,17 @@
 
       @media (min-resolution: $retina-dpi), (min-resolution: $retina-dppx) {
         background-image: url("../img/bg-quest-fatal-experiment-mobile@2x.jpg");
+      }
+    }
+
+    &--order-maniac {
+      background-color: #23150e;
+      background-image: url("../img/bg-quest-maniac-blur-mobile.jpg");
+      background-position: 42% top;
+      background-size: 767px auto;
+
+      @media (min-resolution: $retina-dpi), (min-resolution: $retina-dppx) {
+        background-image: url("../img/bg-quest-maniac-blur-mobile@2x.jpg");
       }
     }
 

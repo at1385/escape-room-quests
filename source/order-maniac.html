@@ -66,7 +66,128 @@
       </div>
     </header>
 
-    <main class="page-main"></main>
+    <main class="page-main page-main--order-maniac">
+      <form class="page-main__order-form order-form container" id="order-form" action="https://echo.htmlacademy.ru/" method="POST">
+        <header class="order-form__block-header block-header block-header--large block-header--low">
+          <a class="block-header__redirect-link" href="catalog.html">
+            <svg width="9" height="13" viewBox="0 0 8 12">
+              <use xlink:href="img/sprite.svg#icon-decor-arrow-stroke"></use>
+            </svg>
+
+            <span>Описание</span>
+          </a>
+
+          <span>выбранный квест</span>
+          <h1>Маньяк</h1>
+        </header>
+
+        <div class="order-form__date-chooser">
+          <button class="order-form__button" id="order-form-date-chooser-button" type="button">
+            Выберите дату
+
+            <svg width="5" height="7">
+              <use xlink:href="img/sprite.svg#icon-decor-arrow-fill"></use>
+            </svg>
+          </button>
+
+          <span class="order-form__date-chooser-label">22 марта</span>
+        </div>
+
+        <div class="order-form__time-chooser">
+          <ul class="order-form__time-chooser-info">
+            <li class="order-form__time-chooser-info-item">— сводобно</li>
+            <li class="order-form__time-chooser-info-item order-form__time-chooser-info-item--occupied">— занято</li>
+            <li class="order-form__time-chooser-info-item order-form__time-chooser-info-item--chosen">— выбрано вами</li>
+          </ul>
+
+          <ul class="order-form__time-list">
+            <li class="order-form__time-field">
+              <input id="order-form-time-9-45" type="radio" name="order-form-time" value="9:45" required>
+              <label for="order-form-time-9-45">9:45</label>
+              <p>1400 <span class="visually-hidden">рублей</span></p>
+            </li>
+
+            <li class="order-form__time-field">
+              <input id="order-form-time-11-00" type="radio" name="order-form-time" value="11:00">
+              <label for="order-form-time-11-00">11:00</label>
+              <p>1400 <span class="visually-hidden">рублей</span></p>
+            </li>
+
+            <li class="order-form__time-field">
+              <input id="order-form-time-12-15" type="radio" name="order-form-time" value="12:15" disabled>
+              <label for="order-form-time-12-15">12:15</label>
+              <p>1400 <span class="visually-hidden">рублей</span></p>
+            </li>
+
+            <li class="order-form__time-field">
+              <input id="order-form-time-13-30" type="radio" name="order-form-time" value="13:30" disabled>
+              <label for="order-form-time-13-30">13:30</label>
+              <p>1400 <span class="visually-hidden">рублей</span></p>
+            </li>
+
+            <li class="order-form__time-field">
+              <input id="order-form-time-14-45" type="radio" name="order-form-time" value="14:45">
+              <label for="order-form-time-14-45">14:45</label>
+              <p>1400 <span class="visually-hidden">рублей</span></p>
+            </li>
+
+            <li class="order-form__time-field">
+              <input id="order-form-time-16-00" type="radio" name="order-form-time" value="16:00">
+              <label for="order-form-time-16-00">16:00</label>
+              <p>1500 <span class="visually-hidden">рублей</span></p>
+            </li>
+
+            <li class="order-form__time-field">
+              <input id="order-form-time-17-15" type="radio" name="order-form-time" value="17:15" disabled>
+              <label for="order-form-time-17-15">17:15</label>
+              <p>1500 <span class="visually-hidden">рублей</span></p>
+            </li>
+
+            <li class="order-form__time-field">
+              <input id="order-form-time-18-30" type="radio" name="order-form-time" value="18:30">
+              <label for="order-form-time-18-30">18:30</label>
+              <p>1500 <span class="visually-hidden">рублей</span></p>
+            </li>
+
+            <li class="order-form__time-field">
+              <input id="order-form-time-19-45" type="radio" name="order-form-time" value="19:45">
+              <label for="order-form-time-19-45">19:45</label>
+              <p>1500 <span class="visually-hidden">рублей</span></p>
+            </li>
+
+            <li class="order-form__time-field">
+              <input id="order-form-time-21-00" type="radio" name="order-form-time" value="21:00">
+              <label for="order-form-time-21-00">21:00</label>
+              <p>1800 <span class="visually-hidden">рублей</span></p>
+            </li>
+
+            <li class="order-form__time-field">
+              <input id="order-form-time-22-15" type="radio" name="order-form-time" value="22:15" disabled>
+              <label for="order-form-time-22-15">22:15</label>
+              <p>1800 <span class="visually-hidden">рублей</span></p>
+            </li>
+
+            <li class="order-form__time-field">
+              <input id="order-form-time-23-30" type="radio" name="order-form-time" value="23:30" disabled>
+              <label for="order-form-time-23-30">23:30</label>
+              <p>2000 <span class="visually-hidden">рублей</span></p>
+            </li>
+          </ul>
+        </div>
+
+        <div class="order-form__submit">
+          <p>Вы выбрали игру 22&nbsp;марта в <span class="order-form__time-value">--:--</span>. К&nbsp;оплате <span class="order-form__price-value">----</span> рублей.</p>
+
+          <button class="order-form__button" id="order-form-submit-button" type="submit">
+            Перейти к оплате
+
+            <svg width="5" height="7">
+              <use xlink:href="img/sprite.svg#icon-decor-arrow-fill"></use>
+            </svg>
+          </button>
+        </div>
+      </form>
+    </main>
 
     <footer class="page-footer container">
       <ul class="page-footer__socials socials">
