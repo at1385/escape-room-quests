@@ -5,8 +5,8 @@
   align-content: flex-start;
   width: 100%;
   margin-top: 35px;
-  padding-right: 150px;
-  padding-left: 136px;
+  padding-right: 10%;
+  padding-left: 10%;
 
   &--js {
     .order-form__date-chooser-label,
@@ -17,11 +17,14 @@
 }
 
 .order-form__block-header {
-  width: 37%;
+  min-width: 399px;
+  max-width: 680px;
+  margin-right: 6%;
   margin-bottom: 13px;
 }
 
 .order-form__date-chooser {
+  order: 1;
   display: flex;
   align-items: center;
   width: 100%;
@@ -34,9 +37,8 @@
 }
 
 .order-form__button {
-  width: 120px;
+  min-width: 120px;
   min-height: 34px;
-  margin-right: 24px;
   padding: 0;
 
   font: inherit;
@@ -75,6 +77,7 @@
 
 .order-form__date-chooser-label {
   display: inline-block;
+  margin-left: 24px;
   padding-bottom: 4px;
 
   font-size: 28px;
@@ -85,6 +88,7 @@
 }
 
 .order-form__time-chooser {
+  order: 1;
   padding-left: 47px;
 }
 
@@ -128,7 +132,7 @@
       background-color: $bright-main;
       background-image: linear-gradient(158.6deg, $bright-main 9.78%, #b8600f 79.81%);
 
-      border-color: transparent;
+      border: none;
     }
   }
 
@@ -137,7 +141,7 @@
       background-color: $bright-success;
       background-image: linear-gradient(180deg, $bright-success 0%, #13ba19 100%);
 
-      border-color: transparent;
+      border: none;
     }
   }
 }
@@ -230,6 +234,29 @@
       background-image: url("../img/bg-logo-ruble.svg");
       background-repeat: no-repeat;
     }
+  }
+}
+
+.order-form__submit {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-end;
+  align-self: flex-end;
+  min-width: 401px;
+
+  &--hidden {
+    display: none;
+  }
+
+  p {
+    width: 165px;
+    margin: 0;
+    margin-right: 98px;
+    margin-bottom: 18px;
+  }
+
+  button {
+    margin-bottom: 23px;
   }
 }
 
