@@ -8,9 +8,40 @@
   justify-content: space-between;
   align-items: flex-start;
   width: 100%;
+  padding-top: 24px;
   padding-bottom: 19px;
 
   transform: translateX(-50%);
+}
+
+@media (max-width: $tablet-max-width) {
+  .js {
+    .page-footer {
+      position: fixed;
+
+      display: none;
+
+      background-color: transparent;
+
+      &--shown {
+        display: flex;
+      }
+    }
+  }
+
+  .page-footer {
+    position: relative;
+
+    background-color: #23150e;
+
+    &--dark-bg {
+      background-color: #141414;
+    }
+
+    &--index-bg {
+      background-color: #22140e;
+    }
+  }
 }
 
 @media (max-width: $mobile-max-width) {
