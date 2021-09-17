@@ -589,6 +589,11 @@ a {
   text-transform: uppercase;
 }
 
+.block-header--low span {
+  margin-left: 6px;
+  margin-bottom: 7px;
+}
+
 .block-header__redirect-link {
   display: none;
 }
@@ -601,6 +606,9 @@ a {
   .block-header--large h1 {
     font-size: 64px;
     line-height: 61px;
+  }
+  .block-header--low span {
+    margin-left: 3px;
   }
 }
 
@@ -621,9 +629,13 @@ a {
     line-height: 46px;
     letter-spacing: 0;
   }
+  .block-header--low span {
+    margin-left: 0;
+  }
   .block-header__redirect-link {
     display: inline-flex;
     align-items: center;
+    margin-bottom: 29px;
   }
   .block-header__redirect-link svg {
     margin-right: 5px;
@@ -1089,6 +1101,304 @@ a {
   }
 }
 
+.order-form {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  align-content: flex-start;
+  width: 100%;
+  margin-top: 35px;
+  padding-right: 10%;
+  padding-left: 10%;
+}
+
+.order-form--js .order-form__date-chooser-label,
+.order-form--js .order-form__time-chooser {
+  display: none;
+}
+
+.order-form__block-header {
+  min-width: 399px;
+  max-width: 680px;
+  margin-right: 6%;
+  margin-bottom: 13px;
+}
+
+.order-form__date-chooser {
+  order: 1;
+  display: flex;
+  align-items: center;
+  width: 100%;
+  min-height: 76px;
+  margin-bottom: 24px;
+  padding-top: 33px;
+  padding-left: 47px;
+  border-top: 1px solid rgba(229, 229, 229, 0.25);
+}
+
+.order-form__button {
+  min-width: 120px;
+  min-height: 34px;
+  padding: 0;
+  font: inherit;
+  color: #ffffff;
+  background-color: transparent;
+  border: none;
+  border-bottom: 2px solid #f2890f;
+  outline: none;
+  cursor: pointer;
+}
+
+.order-form__button svg {
+  margin-left: 1px;
+  fill: #ffffff;
+}
+
+.order-form__button:hover svg, .order-form__button:focus svg {
+  fill: #f2890f;
+}
+
+.order-form__button:focus {
+  outline: 1px dotted rgba(242, 137, 15, 0.5);
+  outline-offset: 4px;
+}
+
+.order-form__button:active {
+  opacity: 0.3;
+}
+
+.order-form__date-chooser-label {
+  display: inline-block;
+  margin-left: 24px;
+  padding-bottom: 4px;
+  font-size: 28px;
+  font-weight: 800;
+  line-height: 38px;
+  vertical-align: top;
+  font-feature-settings: "pnum" off, "lnum" off;
+}
+
+.order-form__time-chooser {
+  order: 1;
+  padding-left: 47px;
+}
+
+.order-form__time-chooser-info {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  margin-bottom: 39px;
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 15px;
+  color: rgba(255, 255, 255, 0.82);
+}
+
+.order-form__time-chooser-info-item {
+  position: relative;
+  margin-right: 25px;
+  margin-bottom: 10px;
+  padding-left: 20px;
+}
+
+.order-form__time-chooser-info-item:last-child {
+  margin-right: 0;
+}
+
+.order-form__time-chooser-info-item::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 15px;
+  height: 15px;
+  border: 2px solid rgba(255, 255, 255, 0.82);
+  border-radius: 3px;
+}
+
+.order-form__time-chooser-info-item--occupied::before {
+  background-color: #f2890f;
+  background-image: linear-gradient(158.6deg, #f2890f 9.78%, #b8600f 79.81%);
+  border: none;
+}
+
+.order-form__time-chooser-info-item--chosen::before {
+  background-color: #2cdb52;
+  background-image: linear-gradient(180deg, #2cdb52 0%, #13ba19 100%);
+  border: none;
+}
+
+.order-form__time-list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  width: 83%;
+}
+
+.order-form__time-field {
+  display: flex;
+  flex-direction: column;
+  width: 110px;
+  margin-right: 32px;
+  margin-bottom: 33px;
+  color: #ffffff;
+  text-align: center;
+}
+
+.order-form__time-field input {
+  position: absolute;
+  clip: rect(1px, 1px, 1px, 1px);
+  padding: 0;
+  border: 0;
+  height: 1px;
+  width: 1px;
+  overflow: hidden;
+}
+
+.order-form__time-field input:focus + label {
+  outline-color: rgba(44, 219, 82, 0.4);
+  outline-offset: 5px;
+}
+
+.order-form__time-field input:checked + label,
+.order-form__time-field input:disabled + label {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  background: linear-gradient(180deg, #2cdb52 0%, #13ba19 100%);
+  border: none;
+  cursor: default;
+}
+
+.order-form__time-field input:checked + label {
+  background: linear-gradient(180deg, #2cdb52 0%, #13ba19 100%);
+}
+
+.order-form__time-field input:disabled + label {
+  background-image: linear-gradient(158.6deg, #f2890f 9.78%, #b8600f 79.81%);
+}
+
+.order-form__time-field label {
+  display: inline-block;
+  width: 110px;
+  height: 38px;
+  margin-bottom: 3px;
+  padding: 6px;
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 23px;
+  letter-spacing: 0.05em;
+  border: 2px solid rgba(255, 255, 255, 0.82);
+  border-radius: 65px;
+  outline: 1px dashed transparent;
+  outline-offset: 3px;
+  cursor: pointer;
+}
+
+.order-form__time-field p {
+  position: relative;
+  max-width: 100%;
+  margin: 0 auto;
+  padding-right: 10px;
+  font-size: 12px;
+  line-height: 17px;
+  word-wrap: break-word;
+}
+
+.order-form__time-field p::before {
+  content: "";
+  position: absolute;
+  bottom: 4px;
+  right: 0;
+  width: 7px;
+  height: 9px;
+  background-image: url("../img/bg-logo-ruble.svg");
+  background-repeat: no-repeat;
+}
+
+.order-form__submit {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-end;
+  align-self: flex-end;
+  min-width: 401px;
+}
+
+.order-form__submit--hidden {
+  display: none;
+}
+
+.order-form__submit p {
+  width: 165px;
+  margin: 0;
+  margin-right: 98px;
+  margin-bottom: 18px;
+}
+
+.order-form__submit button {
+  margin-bottom: 23px;
+}
+
+@media (max-width: 1023px) {
+  .order-form {
+    margin-top: 35px;
+    padding: 0 100px;
+  }
+  .order-form__block-header {
+    min-width: 100%;
+    max-width: 100%;
+    margin-right: 0;
+  }
+  .order-form__date-chooser {
+    order: 0;
+    min-height: 67px;
+    padding-top: 24px;
+    padding-left: 0;
+  }
+  .order-form__time-chooser {
+    order: 0;
+    margin-bottom: 6px;
+    padding-left: 0;
+  }
+  .order-form__time-list {
+    width: 100%;
+  }
+  .order-form__submit {
+    min-width: auto;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .order-form__submit p {
+    width: 302px;
+    margin-right: 0;
+    margin-bottom: 19px;
+  }
+  .order-form__submit button {
+    margin-bottom: 0;
+  }
+}
+
+@media (max-width: 767px) {
+  .order-form {
+    max-width: 613px;
+    min-width: 360px;
+    margin-top: 13px;
+    padding: 0 16px;
+  }
+  .order-form__date-chooser {
+    min-height: 72px;
+    margin-bottom: 21px;
+    padding-top: 29px;
+    padding-left: 0;
+  }
+  .order-form__date-chooser-label {
+    margin-left: 16px;
+  }
+}
+
 .page-main {
   display: flex;
   height: 100%;
@@ -1152,6 +1462,16 @@ a {
 @media (-webkit-min-device-pixel-ratio: 1.5), (min-resolution: 144dpi), (min-resolution: 1.5dppx) {
   .page-main--fatal-experiment {
     background-image: url("../img/bg-quest-fatal-experiment@2x.jpg");
+  }
+}
+
+.page-main--order-maniac {
+  background-image: url("../img/bg-quest-maniac-blur.jpg");
+}
+
+@media (-webkit-min-device-pixel-ratio: 1.5), (min-resolution: 144dpi), (min-resolution: 1.5dppx) {
+  .page-main--order-maniac {
+    background-image: url("../img/bg-quest-maniac-blur@2x.jpg");
   }
 }
 
@@ -1307,6 +1627,21 @@ a {
 @media (max-width: 767px) and (-webkit-min-device-pixel-ratio: 1.5), (max-width: 767px) and (min-resolution: 144dpi), (max-width: 767px) and (min-resolution: 1.5dppx) {
   .page-main--fatal-experiment {
     background-image: url("../img/bg-quest-fatal-experiment-mobile@2x.jpg");
+  }
+}
+
+@media (max-width: 767px) {
+  .page-main--order-maniac {
+    background-color: #23150e;
+    background-image: url("../img/bg-quest-maniac-blur-mobile.jpg");
+    background-position: 42% top;
+    background-size: 767px auto;
+  }
+}
+
+@media (max-width: 767px) and (-webkit-min-device-pixel-ratio: 1.5), (max-width: 767px) and (min-resolution: 144dpi), (max-width: 767px) and (min-resolution: 1.5dppx) {
+  .page-main--order-maniac {
+    background-image: url("../img/bg-quest-maniac-blur-mobile@2x.jpg");
   }
 }
 
