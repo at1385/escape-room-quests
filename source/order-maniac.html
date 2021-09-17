@@ -102,7 +102,7 @@
 
           <ul class="order-form__time-list">
             <li class="order-form__time-field">
-              <input id="order-form-time-9-45" type="radio" name="order-form-time" value="9:45">
+              <input id="order-form-time-9-45" type="radio" name="order-form-time" value="9:45" required>
               <label for="order-form-time-9-45">9:45</label>
               <p>1400 <span class="visually-hidden">рублей</span></p>
             </li>
@@ -173,6 +173,18 @@
               <p>2000 <span class="visually-hidden">рублей</span></p>
             </li>
           </ul>
+        </div>
+
+        <div class="order-form__submit">
+          <p>Вы выбрали игру 22&nbsp;марта в <span class="order-form__time-value">--:--</span>. К&nbsp;оплате <span class="order-form__price-value">----</span> рублей.</p>
+
+          <button class="order-form__button" id="order-form-submit-button" type="submit">
+            Перейти к оплате
+
+            <svg width="5" height="7">
+              <use xlink:href="img/sprite.svg#icon-decor-arrow-fill"></use>
+            </svg>
+          </button>
         </div>
       </form>
     </main>
