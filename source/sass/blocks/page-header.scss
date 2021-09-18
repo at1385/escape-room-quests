@@ -209,6 +209,7 @@
 
 @media (max-width: $mobile-max-width) {
   .page-header {
+    min-width: 360px;
     padding-top: 20px;
   }
 }

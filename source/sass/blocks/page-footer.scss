@@ -46,6 +46,7 @@
 
 @media (max-width: $mobile-max-width) {
   .page-footer {
+    min-width: 360px;
     padding-bottom: 30px;
   }
 }
