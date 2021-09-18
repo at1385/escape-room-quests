@@ -77,7 +77,7 @@
   margin-top: 14px;
 }
 
-.page-geader__right-column {
+.page-header__right-column {
   display: flex;
   flex-wrap: wrap;
   justify-content: flex-end;
@@ -126,7 +126,7 @@
       }
 
       .page-header__main-navigation,
-      .page-geader__right-column {
+      .page-header__right-column {
         display: none;
       }
 
@@ -164,7 +164,7 @@
       }
 
       .page-header__main-navigation,
-      .page-geader__right-column {
+      .page-header__right-column {
         display: flex;
       }
     }
@@ -191,7 +191,7 @@
     border-top: 1px solid rgba($lightest, 0.16);
   }
 
-  .page-geader__right-column {
+  .page-header__right-column {
     flex-direction: column;
     flex-wrap: wrap;
     width: 100%;
