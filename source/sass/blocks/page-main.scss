@@ -131,6 +131,10 @@
   .page-main {
     padding: 0;
 
+    &--index {
+      padding-top: 106px;
+    }
+
     &--background {
       margin-top: -106px;
     }
@@ -193,6 +197,8 @@
     }
 
     &--index {
+      padding-top: 86px;
+
       background-image: url("../img/bg-index-mobile.jpg");
 
       @media (min-resolution: $retina-dpi), (min-resolution: $retina-dppx) {
