@@ -4,7 +4,6 @@
   align-items: flex-start;
   align-content: flex-start;
   width: 100%;
-  margin-top: 35px;
   padding-right: 10%;
   padding-left: 10%;
 
@@ -262,7 +261,6 @@
 
 @media (max-width: $tablet-max-width) {
   .order-form {
-    margin-top: 35px;
     padding: 0 100px;
   }
 
@@ -310,7 +308,6 @@
   .order-form {
     max-width: 613px;
     min-width: 360px;
-    margin-top: 13px;
     padding: 0 16px;
   }
 

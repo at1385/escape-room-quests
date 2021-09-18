@@ -123,6 +123,10 @@
   margin-bottom: auto;
 }
 
+.page-main__order-form {
+  margin-top: 35px;
+}
+
 @media (max-width: $tablet-max-width) {
   .page-main {
     padding: 0;
@@ -142,6 +146,10 @@
     &--ritual,
     &--fatal-experiment {
       background-position: 85% 50%;
+    }
+
+    &--order {
+      padding-bottom: 34px;
     }
 
     &--modal-page {
@@ -166,6 +174,10 @@
 
   .page-main__specific-quest {
     margin-top: 167px;
+  }
+
+  .page-main__order-form {
+    margin-top: 100px;
   }
 }
 
@@ -244,6 +256,10 @@
       }
     }
 
+    &--order {
+      padding-bottom: 43px;
+    }
+
     &--order-maniac {
       background-color: #23150e;
       background-image: url("../img/bg-quest-maniac-blur-mobile.jpg");
@@ -297,6 +313,10 @@
 
   .page-main__specific-quest {
     margin-top: 88px;
+  }
+
+  .page-main__order-form {
+    margin-top: 89px;
   }
 
   .page-main__button {
