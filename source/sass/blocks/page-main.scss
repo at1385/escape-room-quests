@@ -153,7 +153,8 @@
     }
 
     &--modal-page {
-      padding-top: 90px;
+      min-height: auto;
+      padding-bottom: 40px;
     }
   }
 
@@ -161,10 +162,6 @@
     &--index {
       margin-bottom: 65px;
       padding-right: 95px;
-    }
-
-    &--modal-page {
-      padding: 0 32px;
     }
   }
 
