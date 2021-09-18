@@ -115,10 +115,26 @@
 
 .page-main__catalog {
   margin-top: 20px;
+  margin-bottom: auto;
+}
+
+.page-main__specific-quest {
+  margin-top: 50px;
+  margin-bottom: auto;
 }
 
 @media (max-width: $tablet-max-width) {
   .page-main {
+    padding: 0;
+
+    &--background {
+      margin-top: -106px;
+    }
+
+    &--quest {
+      padding-bottom: 50px;
+    }
+
     &--maniac {
       background-position: 65% 50%;
     }
@@ -143,16 +159,29 @@
       padding: 0 32px;
     }
   }
+
+  .page-main__catalog {
+    margin-top: 0;
+  }
+
+  .page-main__specific-quest {
+    margin-top: 167px;
+  }
 }
 
 @media (max-width: $mobile-max-width) {
   .page-main {
-    padding-top: 76px;
-    padding-bottom: 65px;
-
     background-repeat: no-repeat;
     background-position: 50% 50%;
     background-size: cover;
+
+    &--background {
+      margin-top: -86px;
+
+      background-color: #23150e;
+      background-position: 50% top;
+      background-size: 767px auto;
+    }
 
     &--index {
       background-image: url("../img/bg-index-mobile.jpg");
@@ -166,10 +195,6 @@
       position: relative;
 
       padding-bottom: 59px;
-
-      background-color: #23150e;
-      background-position: 50% top;
-      background-size: 767px auto;
 
       &::before {
         content: "";
@@ -223,7 +248,6 @@
       background-color: #23150e;
       background-image: url("../img/bg-quest-maniac-blur-mobile.jpg");
       background-position: 42% top;
-      background-size: 767px auto;
 
       @media (min-resolution: $retina-dpi), (min-resolution: $retina-dppx) {
         background-image: url("../img/bg-quest-maniac-blur-mobile@2x.jpg");
@@ -268,7 +292,11 @@
   }
 
   .page-main__catalog {
-    margin-top: 10px;
+    margin-top: 0;
+  }
+
+  .page-main__specific-quest {
+    margin-top: 88px;
   }
 
   .page-main__button {
