@@ -43,6 +43,7 @@
     font-weight: 500;
     line-height: 20px;
     color: $light;
+    font-feature-settings: "pnum" on, "lnum" on;
 
     background-color: transparent;
 
@@ -100,7 +101,8 @@
       display: none;
     }
 
-    input:focus + label {
+    &.question-form__field--valid label,
+    &.question-form__field--invalid label {
       display: block;
     }
   }
@@ -203,6 +205,27 @@
       width: 100%;
       max-width: 100%;
     }
+  }
+}
+
+.question-form__email-error {
+  position: absolute;
+  bottom: -18px;
+  left: 24px;
+
+  display: none;
+
+  font-size: 12px;
+  line-height: 12px;
+  color: rgba($bright-main, 0.64);
+  letter-spacing: 1;
+
+  p {
+    margin: 0;
+  }
+
+  &--shown {
+    display: block;
   }
 }
 
