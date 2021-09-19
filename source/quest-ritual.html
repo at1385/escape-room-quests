@@ -200,16 +200,20 @@
           </svg>
         </button>
 
-        <div class="question-form__field question-form__field--username">
+        <div class="question-form__field question-form__field--username question-form--userdata">
           <p>Чтобы мы смогли обращаться к вам, оставьте ваше имя</p>
-          <input id="question-form-username" type="text" name="question-form-username" placeholder="Имя" required>
+          <input id="question-form-username" type="text" name="question-form-username" placeholder="Имя" autocomplete="off" required>
           <label for="question-form-username">Имя</label>
         </div>
 
-        <div class="question-form__field question-form__field--user-email">
+        <div class="question-form__field question-form__field--user-email question-form--userdata">
           <p>Чтобы вы получили ответ, оставьте ваш e-mail</p>
-          <input id="question-form-user-email" type="email" name="question-form-user-email" placeholder="E-mail" required>
+          <input id="question-form-user-email" type="email" name="question-form-user-email" placeholder="E-mail" autocomplete="off" required>
           <label for="question-form-user-email">E-mail</label>
+
+          <div class="question-form__email-error">
+            <p>Введён некорректный e-mail, попробуйте заново</p>
+          </div>
         </div>
 
         <div class="question-form__field question-form__field--textarea">
@@ -218,7 +222,7 @@
         </div>
 
         <div class="question-form__submit-wrapper">
-          <button class="question-form__submit button button--small" type="submit" disabled>Отправить вопрос</button>
+          <button class="question-form__submit button button--small" type="submit">Отправить вопрос</button>
         </div>
 
         <div class="question-form__field question-form__field--checkbox">
