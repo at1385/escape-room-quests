@@ -31,6 +31,10 @@
       }
     };
 
+    function existVerticalScroll() {
+      return document.body.offsetHeight > window.innerHeight;
+    }
+
     const getBodyScrollTop = () => {
       return (
         self.pageYOffset ||
@@ -44,10 +48,14 @@
         modal.classList.remove('modal--hidden');
         overlay.classList.remove('overlay--hidden');
 
-        body.dataset.scrollY = getBodyScrollTop();
+        body.dataset.scrollY = `${getBodyScrollTop()}`;
 
-        body.classList.add('body-lock');
-        body.style.top = '-' + body.dataset.scrollY + 'px';
+        if (!existVerticalScroll()) {
+          body.classList.add('body-lock');
+        } else if (!body.classList.contains('body-lock')) {
+          body.classList.add('body-lock--scroll');
+          body.style.top = `-${body.dataset.scrollY}px`;
+        }
 
         document.addEventListener('keydown', onEscPress);
         overlay.addEventListener('click', closeModal);
@@ -58,8 +66,12 @@
       modal.classList.add('modal--hidden');
       overlay.classList.add('overlay--hidden');
 
-      body.classList.remove('body-lock');
-      window.scrollTo(0, +body.dataset.scrollY);
+      if (!existVerticalScroll()) {
+        body.classList.remove('body-lock');
+      } else if (!body.classList.contains('body-lock')) {
+        body.classList.remove('body-lock--scroll');
+        window.scrollTo(0, +body.dataset.scrollY);
+      }
 
       document.removeEventListener('keydown', onEscPress);
       overlay.removeEventListener('click', closeModal);
@@ -82,7 +94,7 @@
   if (modals[0].classList.contains('modal--page')) {
     modals.forEach((item, index) => {
       if (!item.classList.contains('modal--page')) {
-        manageModal(item, modalOpenButtons[index - 1]);
+        manageModal(item, modalOpenButtons[--index]);
       }
     });
   } else {
