@@ -4,6 +4,7 @@
   max-width: 468px;
   padding: 22px 48px;
 
+  font-family: inherit;
   font-size: 17px;
   font-weight: 800;
   line-height: 20px;
@@ -60,7 +61,6 @@
 
 @media (max-width: $mobile-max-width) {
   .button {
-    &--small,
     &--hybrid {
       min-width: 185px;
       max-width: 328px;
