@@ -238,6 +238,16 @@
 
 @media (max-width: $mobile-max-width) {
   .question-form__field {
+    label {
+      top: 49px;
+    }
+
+    &--checkbox {
+      label {
+        top: 0;
+      }
+    }
+
     &--modal-page {
       input,
       textarea {
