@@ -94,8 +94,9 @@
   }
 
   .block-header__redirect-link {
-    display: inline-flex;
+    display: flex;
     align-items: center;
+    margin-right: auto;
     margin-bottom: 29px;
 
     svg {
