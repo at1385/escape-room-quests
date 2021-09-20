@@ -127,8 +127,19 @@
 }
 
 @media (max-width: $tablet-max-width) {
+  .js {
+    .page-main {
+      padding: 0;
+
+      &--index {
+        padding-top: 106px;
+      }
+    }
+  }
+
   .page-main {
     padding: 0;
+    padding-top: 40px;
 
     &--index {
       padding-top: 106px;
@@ -183,6 +194,14 @@
 }
 
 @media (max-width: $mobile-max-width) {
+  .js {
+    .page-main {
+      &--index {
+        padding-top: 86px;
+      }
+    }
+  }
+
   .page-main {
     background-repeat: no-repeat;
     background-position: 50% 50%;
@@ -199,6 +218,7 @@
     &--index {
       padding-top: 86px;
 
+      background-color: #22140e;
       background-image: url("../img/bg-index-mobile.jpg");
 
       @media (min-resolution: $retina-dpi), (min-resolution: $retina-dppx) {
