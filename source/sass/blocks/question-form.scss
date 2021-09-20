@@ -43,6 +43,7 @@
     font-weight: 500;
     line-height: 20px;
     color: $light;
+    font-feature-settings: "pnum" on, "lnum" on;
 
     background-color: transparent;
 
@@ -100,7 +101,8 @@
       display: none;
     }
 
-    input:focus + label {
+    &.question-form__field--valid label,
+    &.question-form__field--invalid label {
       display: block;
     }
   }
@@ -150,6 +152,7 @@
       font-size: 14px;
       line-height: 20px;
       text-align: left;
+      letter-spacing: 0;
     }
 
     label::before {
@@ -206,6 +209,27 @@
   }
 }
 
+.question-form__email-error {
+  position: absolute;
+  bottom: -18px;
+  left: 24px;
+
+  display: none;
+
+  font-size: 12px;
+  line-height: 12px;
+  color: rgba($bright-main, 0.64);
+  letter-spacing: 1;
+
+  p {
+    margin: 0;
+  }
+
+  &--shown {
+    display: block;
+  }
+}
+
 .question-form__submit-wrapper {
   margin-bottom: 25px;
 
@@ -214,6 +238,16 @@
 
 @media (max-width: $mobile-max-width) {
   .question-form__field {
+    label {
+      top: 49px;
+    }
+
+    &--checkbox {
+      label {
+        top: 0;
+      }
+    }
+
     &--modal-page {
       input,
       textarea {

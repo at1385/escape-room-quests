@@ -23,6 +23,8 @@
     height: 40px;
 
     background-image: linear-gradient(270deg, #1a1919 0%, rgba(#1a1919, 0) 100%);
+
+    pointer-events: none;
   }
 }
 
@@ -139,6 +141,30 @@
 
   overflow: hidden;
 
+  &--hit {
+    &::before {
+      content: "Хит";
+      position: absolute;
+      top: 15px;
+      right: 16px;
+
+      width: 67px;
+      height: 28px;
+      padding-left: 17px;
+
+      font-size: 12px;
+      line-height: 24px;
+      text-align: center;
+
+      background-image: url("../img/bg-decor-star.svg");
+      background-repeat: no-repeat;
+      background-position: 13px 5px;
+
+      border: 2px solid rgba($bright-main, 0.74);
+      border-radius: 25px;
+    }
+  }
+
   a {
     position: absolute;
     top: 0;
@@ -159,7 +185,7 @@
   }
 
   h2 {
-    width: 93%;
+    width: 92.5%;
     margin: 0;
     margin-top: auto;
     margin-left: 3px;
@@ -300,6 +326,12 @@
 
     &:not(:nth-child(even)) {
       margin-right: 0;
+    }
+
+    &--hit {
+      &::before {
+        right: 14px;
+      }
     }
   }
 }

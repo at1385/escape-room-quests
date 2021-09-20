@@ -1,18 +1,29 @@
 .specific-quest {
   width: 100%;
-  margin-top: 50px;
-  margin-bottom: auto;
   padding: 0 86px;
 }
 
 .specific-quest__column {
-  max-width: 680px;
+  max-width: 57%;
   margin-left: auto;
+  padding-top: 53px;
+
+  &--high {
+    padding-top: 94px;
+  }
+
+  &--low {
+    padding-top: 0;
+  }
+
+  &--wide {
+    max-width: 680px;
+  }
 
   p {
     width: 76.8%;
+    min-width: 466px;
     margin: 0;
-
     margin-bottom: 21px;
 
     &:last-of-type {
@@ -24,7 +35,6 @@
 }
 
 .specific-quest__block-header {
-  margin-top: auto;
   margin-bottom: 21px;
 }
 
@@ -39,18 +49,21 @@
 
 @media (max-width: $tablet-max-width) {
   .specific-quest__column {
-    max-width: 560px;
+    max-width: 61%;
+    min-width: 447px;
+    padding-top: 0;
 
     p {
-      width: 100%;
+      width: 90%;
+      min-width: 415px;
     }
   }
 }
 
 @media (max-width: $mobile-max-width) {
   .specific-quest {
-    margin-top: 11px;
     padding: 0 16px;
+    padding-bottom: 50px;
   }
 
   .specific-quest__block-header {
@@ -58,10 +71,13 @@
   }
 
   .specific-quest__column {
+    max-width: 600px;
+    min-width: 328px;
     margin-right: auto;
 
     p {
       width: 101%;
+      min-width: 328px;
       margin-bottom: 15px;
       margin-left: 0;
 

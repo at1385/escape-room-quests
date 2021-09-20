@@ -16,6 +16,8 @@
 
   border-bottom: 1px dashed $light;
 
+  pointer-events: auto;
+
   &::before {
     content: "?";
     position: absolute;
@@ -41,7 +43,7 @@
   }
 }
 
-@media (max-width: $mobile-max-width) {
+@media (max-width: $tablet-max-width) {
   .question-link {
     max-width: 130px;
     margin-top: 6px;

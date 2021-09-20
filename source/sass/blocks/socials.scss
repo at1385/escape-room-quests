@@ -4,6 +4,8 @@
   flex-wrap: wrap;
   width: 105px;
 
+  pointer-events: auto;
+
   li {
     margin-right: 7px;
     margin-bottom: 5px;
@@ -67,7 +69,7 @@
   }
 }
 
-@media (max-width: $mobile-max-width) {
+@media (max-width: $tablet-max-width) {
   .socials {
     width: 88px;
 

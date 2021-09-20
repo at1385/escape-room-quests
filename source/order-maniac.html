@@ -13,21 +13,21 @@
 
   <body>
     <header class="page-header container">
-      <div class="page-header__top page-header__top--opened">
+      <div class="page-header__top">
         <a class="page-header__site-logo site-logo" href="index.html">
-          <svg width="134" height="52" viewBox="0 0 134 52">
+          <svg width="134" height="52" viewBox="0 0 134 52" aria-label="Логотип квестов «Escape Room»">
             <use xlink:href="img/sprite.svg#icon-logo-escape-room"></use>
           </svg>
         </a>
 
-        <button class="page-header__navigation-toggle page-header__navigation-toggle--hidden" type="button">
+        <button class="page-header__navigation-toggle" type="button">
           <span>Меню</span>
 
           <svg class="page-header__icon page-header__icon--burger" width="20" height="14">
             <use xlink:href="img/sprite.svg#icon-button-burger"></use>
           </svg>
 
-          <svg class="page-header__icon page-header__icon--close page-header__icon--hidden" width="16" height="16">
+          <svg class="page-header__icon page-header__icon--close" width="16" height="16">
             <use xlink:href="img/sprite.svg#icon-button-close"></use>
           </svg>
         </button>
@@ -53,7 +53,7 @@
         </ul>
       </nav>
 
-      <div class="page-geader__right-column">
+      <div class="page-header__right-column">
         <a class="page-header__location-link location-link modal-open" href="modal-city-chooser.html">
           <span>Новосибирск</span>
         </a>
@@ -66,10 +66,10 @@
       </div>
     </header>
 
-    <main class="page-main page-main--order-maniac">
+    <main class="page-main page-main--order page-main--order-maniac page-main--background">
       <form class="page-main__order-form order-form container" id="order-form" action="https://echo.htmlacademy.ru/" method="POST">
         <header class="order-form__block-header block-header block-header--large block-header--low">
-          <a class="block-header__redirect-link" href="catalog.html">
+          <a class="block-header__redirect-link" href="quest-maniac.html">
             <svg width="9" height="13" viewBox="0 0 8 12">
               <use xlink:href="img/sprite.svg#icon-decor-arrow-stroke"></use>
             </svg>
@@ -218,7 +218,7 @@
     <div class="overlay overlay--hidden"></div>
 
     <form class="modal modal--hidden modal--city-chooser city-chooser-form" id="city-chooser-form" action="https://echo.htmlacademy.ru/" method="POST">
-      <div class="modal__wrapper">
+      <div class="modal__wrapper" data-simplebar>
         <h2>Ваш город:</h2>
 
         <button class="modal__close-button" type="button">
@@ -263,7 +263,7 @@
     </form>
 
     <form class="modal modal--hidden modal--question question-form" id="question-form" action="https://echo.htmlacademy.ru/" method="POST">
-      <div class="modal__wrapper">
+      <div class="modal__wrapper" data-simplebar>
         <h2>Задайте вопрос</h2>
 
         <button class="modal__close-button" type="button">
@@ -274,16 +274,20 @@
           </svg>
         </button>
 
-        <div class="question-form__field question-form__field--username">
-          <p>Чтобы мы смогли обращаться к вам, оставьте ваше имя</p>
-          <input id="question-form-username" type="text" name="question-form-username" placeholder="Имя" required>
+        <div class="question-form__field question-form__field--username question-form__field--userdata">
+          <p>Чтобы мы смогли обращаться к вам, оставьте&nbsp;ваше имя</p>
+          <input id="question-form-username" type="text" name="question-form-username" placeholder="Имя" autocomplete="off" required>
           <label for="question-form-username">Имя</label>
         </div>
 
-        <div class="question-form__field question-form__field--user-email">
-          <p>Чтобы вы получили ответ, оставьте ваш e-mail</p>
-          <input id="question-form-user-email" type="email" name="question-form-user-email" placeholder="E-mail" required>
+        <div class="question-form__field question-form__field--user-email question-form__field--userdata">
+          <p>Чтобы вы получили ответ, оставьте ваш e&#8209;mail</p>
+          <input id="question-form-user-email" type="email" name="question-form-user-email" placeholder="E-mail" autocomplete="off" required>
           <label for="question-form-user-email">E-mail</label>
+
+          <div class="question-form__email-error">
+            <p>Введён некорректный e-mail, попробуйте заново</p>
+          </div>
         </div>
 
         <div class="question-form__field question-form__field--textarea">
@@ -292,7 +296,7 @@
         </div>
 
         <div class="question-form__submit-wrapper">
-          <button class="question-form__submit button button--small" type="submit" disabled>Отправить вопрос</button>
+          <button class="question-form__submit button button--small" type="submit">Отправить вопрос</button>
         </div>
 
         <div class="question-form__field question-form__field--checkbox">

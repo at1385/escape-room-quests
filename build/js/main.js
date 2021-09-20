@@ -37,23 +37,20 @@
       }
     };
 
-    const getBodyScrollTop = () => {
-      return (
-        self.pageYOffset ||
-        (document.documentElement && document.documentElement.ScrollTop) ||
-        (document.body && document.body.scrollTop)
-      );
-    };
+    function existVerticalScroll() {
+      return document.body.offsetHeight > window.innerHeight;
+    }
 
     const openModal = () => {
       if (modal && overlay) {
         modal.classList.remove('modal--hidden');
         overlay.classList.remove('overlay--hidden');
 
-        body.dataset.scrollY = getBodyScrollTop();
-
-        body.classList.add('body-lock');
-        body.style.top = '-' + body.dataset.scrollY + 'px';
+        if (!existVerticalScroll()) {
+          body.classList.add('body-lock');
+        } else if (!body.classList.contains('body-lock')) {
+          body.classList.add('body-lock--scroll');
+        }
 
         document.addEventListener('keydown', onEscPress);
         overlay.addEventListener('click', closeModal);
@@ -64,8 +61,11 @@
       modal.classList.add('modal--hidden');
       overlay.classList.add('overlay--hidden');
 
-      body.classList.remove('body-lock');
-      window.scrollTo(0, +body.dataset.scrollY);
+      if (!existVerticalScroll()) {
+        body.classList.remove('body-lock');
+      } else if (!body.classList.contains('body-lock')) {
+        body.classList.remove('body-lock--scroll');
+      }
 
       document.removeEventListener('keydown', onEscPress);
       overlay.removeEventListener('click', closeModal);
@@ -88,7 +88,7 @@
   if (modals[0].classList.contains('modal--page')) {
     modals.forEach((item, index) => {
       if (!item.classList.contains('modal--page')) {
-        manageModal(item, modalOpenButtons[index - 1]);
+        manageModal(item, modalOpenButtons[--index]);
       }
     });
   } else {
@@ -158,28 +158,182 @@
 })();
 
 (function () {
+  const questionForm = document.querySelector('.question-form');
+  const questionLink = document.querySelector('.question-link');
+
+  const setFocus = (field) => {
+    if (field) {
+      field.focus();
+    }
+  }
+
+  const addClass = (styleClass, targetElement) => {
+    if (!targetElement.classList.contains(styleClass)) {
+      targetElement.classList.add(styleClass);
+    }
+  }
+
+  const removeClass = (styleClass, targetElement) => {
+    if (targetElement.classList.contains(styleClass)) {
+      targetElement.classList.remove(styleClass);
+    }
+  }
+
+  if (questionForm) {
+    const userData = questionForm.querySelectorAll('.question-form__field--userdata');
+    const userDataInputs = questionForm.querySelectorAll('.question-form__field--userdata input');
+    const userName = questionForm.querySelector('#question-form-username');
+    const userEmail = questionForm.querySelector('#question-form-user-email');
+    const userEmailError = questionForm.querySelector('.question-form__email-error');
+    const userQuestion = questionForm.querySelector('#question-form-user-question');
+    const userConsent = questionForm.querySelector('#question-form-personal-data-consent');
+    const submit = questionForm.querySelector('.question-form__submit');
+
+    if (submit) {
+      submit.setAttribute('disabled', 'disabled');
+    }
+
+    setFocus(userName);
+
+    if (questionLink) {
+      questionLink.addEventListener('click', (evt) => {
+        evt.preventDefault();
+        setFocus(userName);
+      });
+    }
+
+    let isStorageSupport = true;
+    let nameStorage = '';
+    let emailStorage = '';
+    let questionStorage = '';
+
+    try {
+      nameStorage = localStorage.getItem('userName');
+      emailStorage = localStorage.getItem('userEmail');
+      questionStorage = localStorage.getItem('userQuestion');
+    } catch (err) {
+      isStorageSupport = false;
+    }
+
+    if (nameStorage && userName) {
+      userName.value = nameStorage;
+    }
+    if (emailStorage && userEmail) {
+      userEmail.value = emailStorage;
+    }
+    if (questionStorage && userQuestion) {
+      userQuestion.value = questionStorage;
+    }
+
+    const setSubmitCondition = () => {
+      if (userName.value !== '' && userEmail.value !== '' && userConsent.checked) {
+        if (submit) {
+          submit.removeAttribute('disabled');
+        }
+      } else {
+        if (!submit.getAttribute('disabled')) {
+          submit.setAttribute('disabled', 'disabled');
+        }
+      }
+    }
+
+    setSubmitCondition();
+
+    if (userData) {
+      userData.forEach((item, index) => {
+        if (userDataInputs[index].value !== '' && userDataInputs[index].validity.valid) {
+          addClass('question-form__field--valid', item);
+        } else if (userDataInputs[index].value !== '' && !userDataInputs[index].validity.valid) {
+          addClass('question-form__field--invalid', item);
+
+          if (item.classList.contains('question-form__field--user-email')) {
+            userEmailError.classList.add('question-form__email-error--shown');
+          }
+        }
+
+        userDataInputs[index].addEventListener('keyup', () => {
+          if (userDataInputs[index].value === '' && item.classList.contains('question-form__field--valid')) {
+            removeClass('question-form__field--valid', item);
+          } else {
+            if (!item.classList.contains('question-form__field--user-email') && item.classList.contains('question-form__field--invalid')) {
+              removeClass('question-form__field--invalid', item);
+            }
+
+            if (item.classList.contains('question-form__field--user-email')) {
+              if (userDataInputs[index].validity.valid && userEmailError.classList.contains('question-form__email-error--shown')) {
+                userEmailError.classList.remove('question-form__email-error--shown');
+                removeClass('question-form__field--invalid', item);
+              }
+
+              if (!userDataInputs[index].validity.valid && userDataInputs[index].value !== '') {
+                removeClass('question-form__field--invalid', item);
+                userEmailError.classList.remove('question-form__email-error--shown');
+              }
+            }
+
+            addClass('question-form__field--valid', item);
+          }
+
+          if (isStorageSupport) {
+            localStorage.setItem('userName', userName.value);
+            localStorage.setItem('userEmail', userEmail.value);
+          }
+
+          setSubmitCondition();
+        });
+      });
+    }
+
+    if (userQuestion) {
+      userQuestion.addEventListener('keyup', () => {
+        if (isStorageSupport) {
+          localStorage.setItem('userQuestion', userQuestion.value);
+        }
+      });
+    }
+
+    if (userConsent) {
+      userConsent.addEventListener('change', () => {
+        setSubmitCondition();
+      });
+    }
+
+    if (submit) {
+      submit.addEventListener('click', () => {
+        if (userData) {
+          userData.forEach((item, index) => {
+            if (!userDataInputs[index].validity.valid) {
+              addClass('question-form__field--invalid', item);
+            }
+
+            if (!userDataInputs[index].validity.valid && item.classList.contains('question-form__field--user-email')) {
+              userEmailError.classList.add('question-form__email-error--shown');
+            }
+          });
+        }
+      });
+    }
+  }
+})();
+
+(function () {
   const pageHeader = document.querySelector('.page-header');
-  const pageHeaderTop = pageHeader.querySelector('.page-header__top');
-  const navigationToggle = pageHeaderTop.querySelector('.page-header__navigation-toggle');
-  const toggleBurgerIcon = navigationToggle.querySelector('.page-header__icon--burger');
-  const toggleCloseIcon = navigationToggle.querySelector('.page-header__icon--close');
-  const mainNavigation = pageHeader.querySelector('.page-header__main-navigation');
-  const rightColumn = pageHeader.querySelector('.page-geader__right-column');
+  const pageFooter = document.querySelector('.page-footer');
 
-  pageHeader.classList.add('page-header--transparent');
-  pageHeader.classList.add('page-header--fixed');
-  pageHeaderTop.classList.remove('page-header__top--opened');
-  navigationToggle.classList.remove('page-header__navigation-toggle--hidden');
-  mainNavigation.classList.add('page-header__main-navigation--hidden');
-  rightColumn.classList.add('page-geader__right-column--hidden');
+  if (pageHeader) {
+    const navigationToggle = pageHeader.querySelector('.page-header__navigation-toggle');
 
-  navigationToggle.addEventListener('click', function () {
-    pageHeader.classList.toggle('page-header--transparent');
-    pageHeader.classList.toggle('page-header--opened');
-    pageHeaderTop.classList.toggle('page-header__top--opened');
-    toggleBurgerIcon.classList.toggle('page-header__icon--hidden');
-    toggleCloseIcon.classList.toggle('page-header__icon--hidden');
-    mainNavigation.classList.toggle('page-header__main-navigation--hidden');
-    rightColumn.classList.toggle('page-geader__right-column--hidden');
-  });
+    pageHeader.classList.add('page-header--js');
+
+    if (navigationToggle) {
+      navigationToggle.addEventListener('click', function () {
+        pageHeader.classList.toggle('page-header--opened');
+        document.body.classList.toggle('body-lock');
+
+        if (pageFooter) {
+          pageFooter.classList.toggle('page-footer--shown');
+        }
+      });
+    }
+  }
 })();
