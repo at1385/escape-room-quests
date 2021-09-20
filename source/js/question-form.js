@@ -21,8 +21,8 @@
   }
 
   if (questionForm) {
-    const userData = questionForm.querySelectorAll('.question-form--userdata');
-    const userDataInputs = questionForm.querySelectorAll('.question-form--userdata input');
+    const userData = questionForm.querySelectorAll('.question-form__field--userdata');
+    const userDataInputs = questionForm.querySelectorAll('.question-form__field--userdata input');
     const userName = questionForm.querySelector('#question-form-username');
     const userEmail = questionForm.querySelector('#question-form-user-email');
     const userEmailError = questionForm.querySelector('.question-form__email-error');
