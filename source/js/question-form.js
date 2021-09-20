@@ -80,69 +80,79 @@
 
     setSubmitCondition();
 
-    userData.forEach((item, index) => {
-      if (userDataInputs[index].value !== '' && userDataInputs[index].validity.valid) {
-        addClass('question-form__field--valid', item);
-      } else if (userDataInputs[index].value !== '' && !userDataInputs[index].validity.valid) {
-        addClass('question-form__field--invalid', item);
-
-        if (item.classList.contains('question-form__field--user-email')) {
-          userEmailError.classList.add('question-form__email-error--shown');
-        }
-      }
-
-      userDataInputs[index].addEventListener('keyup', () => {
-        if (userDataInputs[index].value === '' && item.classList.contains('question-form__field--valid')) {
-          removeClass('question-form__field--valid', item);
-        } else {
-          if (!item.classList.contains('question-form__field--user-email') && item.classList.contains('question-form__field--invalid')) {
-            removeClass('question-form__field--invalid', item);
-          }
+    if (userData) {
+      userData.forEach((item, index) => {
+        if (userDataInputs[index].value !== '' && userDataInputs[index].validity.valid) {
+          addClass('question-form__field--valid', item);
+        } else if (userDataInputs[index].value !== '' && !userDataInputs[index].validity.valid) {
+          addClass('question-form__field--invalid', item);
 
           if (item.classList.contains('question-form__field--user-email')) {
-            if (userDataInputs[index].validity.valid && userEmailError.classList.contains('question-form__email-error--shown')) {
-              userEmailError.classList.remove('question-form__email-error--shown');
+            userEmailError.classList.add('question-form__email-error--shown');
+          }
+        }
+
+        userDataInputs[index].addEventListener('keyup', () => {
+          if (userDataInputs[index].value === '' && item.classList.contains('question-form__field--valid')) {
+            removeClass('question-form__field--valid', item);
+          } else {
+            if (!item.classList.contains('question-form__field--user-email') && item.classList.contains('question-form__field--invalid')) {
               removeClass('question-form__field--invalid', item);
             }
 
-            if (!userDataInputs[index].validity.valid && userDataInputs[index].value !== '') {
-              removeClass('question-form__field--invalid', item);
-              userEmailError.classList.remove('question-form__email-error--shown');
+            if (item.classList.contains('question-form__field--user-email')) {
+              if (userDataInputs[index].validity.valid && userEmailError.classList.contains('question-form__email-error--shown')) {
+                userEmailError.classList.remove('question-form__email-error--shown');
+                removeClass('question-form__field--invalid', item);
+              }
+
+              if (!userDataInputs[index].validity.valid && userDataInputs[index].value !== '') {
+                removeClass('question-form__field--invalid', item);
+                userEmailError.classList.remove('question-form__email-error--shown');
+              }
             }
+
+            addClass('question-form__field--valid', item);
           }
 
-          addClass('question-form__field--valid', item);
-        }
+          if (isStorageSupport) {
+            localStorage.setItem('userName', userName.value);
+            localStorage.setItem('userEmail', userEmail.value);
+          }
 
+          setSubmitCondition();
+        });
+      });
+    }
+
+    if (userQuestion) {
+      userQuestion.addEventListener('keyup', () => {
         if (isStorageSupport) {
-          localStorage.setItem('userName', userName.value);
-          localStorage.setItem('userEmail', userEmail.value);
+          localStorage.setItem('userQuestion', userQuestion.value);
         }
+      });
+    }
 
+    if (userConsent) {
+      userConsent.addEventListener('change', () => {
         setSubmitCondition();
       });
-    });
+    }
 
-    userQuestion.addEventListener('keyup', () => {
-      if (isStorageSupport) {
-        localStorage.setItem('userQuestion', userQuestion.value);
-      }
-    });
+    if (submit) {
+      submit.addEventListener('click', () => {
+        if (userData) {
+          userData.forEach((item, index) => {
+            if (!userDataInputs[index].validity.valid) {
+              addClass('question-form__field--invalid', item);
+            }
 
-    userConsent.addEventListener('change', () => {
-      setSubmitCondition();
-    });
-
-    submit.addEventListener('click', () => {
-      userData.forEach((item, index) => {
-        if (!userDataInputs[index].validity.valid) {
-          addClass('question-form__field--invalid', item);
-        }
-
-        if (!userDataInputs[index].validity.valid && item.classList.contains('question-form__field--user-email')) {
-          userEmailError.classList.add('question-form__email-error--shown');
+            if (!userDataInputs[index].validity.valid && item.classList.contains('question-form__field--user-email')) {
+              userEmailError.classList.add('question-form__email-error--shown');
+            }
+          });
         }
       });
-    })
+    }
   }
 })();
