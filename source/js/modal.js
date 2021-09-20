@@ -35,26 +35,15 @@
       return document.body.offsetHeight > window.innerHeight;
     }
 
-    const getBodyScrollTop = () => {
-      return (
-        self.pageYOffset ||
-        (document.documentElement && document.documentElement.ScrollTop) ||
-        (document.body && document.body.scrollTop)
-      );
-    };
-
     const openModal = () => {
       if (modal && overlay) {
         modal.classList.remove('modal--hidden');
         overlay.classList.remove('overlay--hidden');
 
-        body.dataset.scrollY = `${getBodyScrollTop()}`;
-
         if (!existVerticalScroll()) {
           body.classList.add('body-lock');
         } else if (!body.classList.contains('body-lock')) {
           body.classList.add('body-lock--scroll');
-          body.style.top = `-${body.dataset.scrollY}px`;
         }
 
         document.addEventListener('keydown', onEscPress);
@@ -70,7 +59,6 @@
         body.classList.remove('body-lock');
       } else if (!body.classList.contains('body-lock')) {
         body.classList.remove('body-lock--scroll');
-        window.scrollTo(0, +body.dataset.scrollY);
       }
 
       document.removeEventListener('keydown', onEscPress);
