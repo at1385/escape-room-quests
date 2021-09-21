@@ -84,28 +84,6 @@
     word-wrap: break-word;
   }
 
-  &--index {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    min-height: 100%;
-    margin: auto;
-
-    h1 {
-      width: 538px;
-      margin-top: 7px;
-      margin-bottom: 33px;
-    }
-
-    p {
-      width: 468px;
-      margin: 0;
-      margin-bottom: 65px;
-
-      font-size: 17px;
-    }
-  }
-
   &--modal-page {
     margin: auto;
     padding: 0 32px;
@@ -169,14 +147,6 @@
     &--modal-page {
       min-height: auto;
       padding-bottom: 40px;
-    }
-  }
-
-  .page-main__wrapper {
-    &--index {
-      margin-top: 186px;
-      margin-bottom: 65px;
-      padding-right: 95px;
     }
   }
 
@@ -310,23 +280,6 @@
       line-height: 40px;
     }
 
-    &--index {
-      margin-top: 323px;
-      padding: 0 16px;
-
-      h1 {
-        width: 328px;
-        margin-right: auto;
-        margin-left: auto;
-
-        text-align: center;
-      }
-
-      p {
-        display: none;
-      }
-    }
-
     &--modal-page {
       padding: 0 16px;
     }
@@ -342,9 +295,5 @@
 
   .page-main__order-form {
     margin-top: 89px;
-  }
-
-  .page-main__button {
-    margin: 0 auto;
   }
 }
