@@ -736,6 +736,64 @@ a {
   }
 }
 
+.promo {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  width: 100%;
+  min-height: 100%;
+  margin: auto;
+  padding: 0 135px;
+}
+
+.promo h1 {
+  margin: 0;
+  width: 538px;
+  margin-top: 7px;
+  margin-bottom: 33px;
+  font-size: 64px;
+  font-weight: 800;
+  line-height: 70px;
+  color: #ffffff;
+  word-wrap: break-word;
+}
+
+.promo p {
+  width: 468px;
+  margin: 0;
+  margin-bottom: 65px;
+  font-size: 17px;
+}
+
+@media (max-width: 1023px) {
+  .promo {
+    margin-top: 186px;
+    margin-bottom: 65px;
+    padding-right: 95px;
+  }
+}
+
+@media (max-width: 767px) {
+  .promo {
+    margin-top: 323px;
+    padding: 0 16px;
+  }
+  .promo h1 {
+    width: 328px;
+    margin-right: auto;
+    margin-left: auto;
+    font-size: 36px;
+    line-height: 40px;
+    text-align: center;
+  }
+  .promo p {
+    display: none;
+  }
+  .promo__button {
+    margin: 0 auto;
+  }
+}
+
 .button {
   display: inline-block;
   min-width: 252px;
@@ -1770,27 +1828,6 @@ a {
   word-wrap: break-word;
 }
 
-.page-main__wrapper--index {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  min-height: 100%;
-  margin: auto;
-}
-
-.page-main__wrapper--index h1 {
-  width: 538px;
-  margin-top: 7px;
-  margin-bottom: 33px;
-}
-
-.page-main__wrapper--index p {
-  width: 468px;
-  margin: 0;
-  margin-bottom: 65px;
-  font-size: 17px;
-}
-
 .page-main__wrapper--modal-page {
   margin: auto;
   padding: 0 32px;
@@ -1842,11 +1879,6 @@ a {
   .page-main--modal-page {
     min-height: auto;
     padding-bottom: 40px;
-  }
-  .page-main__wrapper--index {
-    margin-top: 186px;
-    margin-bottom: 65px;
-    padding-right: 95px;
   }
   .page-main__catalog {
     margin-top: 0;
@@ -1980,19 +2012,6 @@ a {
     font-size: 36px;
     line-height: 40px;
   }
-  .page-main__wrapper--index {
-    margin-top: 323px;
-    padding: 0 16px;
-  }
-  .page-main__wrapper--index h1 {
-    width: 328px;
-    margin-right: auto;
-    margin-left: auto;
-    text-align: center;
-  }
-  .page-main__wrapper--index p {
-    display: none;
-  }
   .page-main__wrapper--modal-page {
     padding: 0 16px;
   }
@@ -2004,9 +2023,6 @@ a {
   }
   .page-main__order-form {
     margin-top: 89px;
-  }
-  .page-main__button {
-    margin: 0 auto;
   }
 }
 
@@ -2527,6 +2543,7 @@ a {
   padding: 0;
   font: inherit;
   color: #e5e5e5;
+  vertical-align: top;
   background-color: transparent;
 }
 
