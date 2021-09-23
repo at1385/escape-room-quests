@@ -135,24 +135,22 @@
       <div class="modal__wrapper" data-simplebar>
         <h2>Задайте вопрос</h2>
 
-        <button class="modal__close-button" type="button">
-          <span class="visually-hidden">Закрыть окно</span>
-
-          <svg width="14" height="14" viewBox="0 0 16 16">
-            <use xlink:href="img/sprite.svg#icon-button-close"></use>
-          </svg>
-        </button>
-
         <div class="question-form__field question-form__field--username question-form__field--userdata">
           <p>Чтобы мы смогли обращаться к вам, оставьте&nbsp;ваше имя</p>
-          <input id="question-form-username" type="text" name="question-form-username" placeholder="Имя" autocomplete="off" required>
-          <label for="question-form-username">Имя</label>
+
+          <div class="question-form__field-wrapper">
+            <input id="question-form-username" type="text" name="question-form-username" placeholder="Имя" autocomplete="off" required>
+            <label for="question-form-username">Имя</label>
+          </div>
         </div>
 
         <div class="question-form__field question-form__field--user-email question-form__field--userdata">
           <p>Чтобы вы получили ответ, оставьте ваш e&#8209;mail</p>
-          <input id="question-form-user-email" type="email" name="question-form-user-email" placeholder="E-mail" autocomplete="off" required>
-          <label for="question-form-user-email">E-mail</label>
+
+          <div class="question-form__field-wrapper">
+            <input id="question-form-user-email" type="email" name="question-form-user-email" placeholder="E-mail" autocomplete="off" required>
+            <label for="question-form-user-email">E-mail</label>
+          </div>
 
           <div class="question-form__email-error">
             <p>Введён некорректный e-mail, попробуйте заново</p>
@@ -172,6 +170,14 @@
           <input id="question-form-personal-data-consent" name="question-form-personal-data-consent" type="checkbox" required>
           <label for="question-form-personal-data-consent">Я согласен с <a href="#">правилами обработки персональных данных</a> и пользовательским соглашением</label>
         </div>
+
+        <button class="modal__close-button" type="button">
+          <span class="visually-hidden">Закрыть окно</span>
+
+          <svg width="14" height="14" viewBox="0 0 16 16">
+            <use xlink:href="img/sprite.svg#icon-button-close"></use>
+          </svg>
+        </button>
       </div>
     </form>
 
