@@ -332,6 +332,8 @@
 
   .catalog__item {
     width: 100%;
+    height: auto;
+    min-height: 232px;
     margin-bottom: 16px;
 
     &:not(:nth-child(even)) {

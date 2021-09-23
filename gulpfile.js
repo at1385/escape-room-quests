@@ -44,7 +44,7 @@ const imgmin = () => {
 
 const imgwebp = () => {
   return src('source/img/content-*.{png,jpg}')
-    .pipe(webp({ quality: 76 }))
+    .pipe(webp({ quality: 90 }))
     .pipe(dest('build/img'));
 };
 
