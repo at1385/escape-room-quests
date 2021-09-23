@@ -75,14 +75,20 @@
 
           <div class="question-form__field question-form__field--username question-form__field--userdata question-form__field--modal-page">
             <p>Чтобы мы смогли обращаться к вам, оставьте&nbsp;ваше имя</p>
-            <input id="question-form-username" type="text" name="question-form-username" placeholder="Имя" autocomplete="off" required>
-            <label for="question-form-username">Имя</label>
+
+            <div class="question-form__field-wrapper">
+              <input id="question-form-username" type="text" name="question-form-username" placeholder="Имя" autocomplete="off" required>
+              <label for="question-form-username">Имя</label>
+            </div>
           </div>
 
           <div class="question-form__field question-form__field--user-email question-form__field--userdata question-form__field--modal-page">
             <p>Чтобы вы получили ответ, оставьте ваш e&#8209;mail</p>
-            <input id="question-form-user-email" type="email" name="question-form-user-email" placeholder="E-mail" autocomplete="off" required>
-            <label for="question-form-user-email">E-mail</label>
+
+            <div class="question-form__field-wrapper">
+              <input id="question-form-user-email" type="email" name="question-form-user-email" placeholder="E-mail" autocomplete="off" required>
+              <label for="question-form-user-email">E-mail</label>
+            </div>
 
             <div class="question-form__email-error">
               <p>Введён некорректный e-mail, попробуйте заново</p>
@@ -136,14 +142,6 @@
       <div class="modal__wrapper" data-simplebar>
         <h2>Ваш город:</h2>
 
-        <button class="modal__close-button" type="button">
-          <span class="visually-hidden">Закрыть окно</span>
-
-          <svg width="14" height="14" viewBox="0 0 16 16">
-            <use xlink:href="img/sprite.svg#icon-button-close"></use>
-          </svg>
-        </button>
-
         <a class="city-chooser-form__geolocation" href="#">
           <span>Определить местоположение</span>
         </a>
@@ -174,6 +172,14 @@
           <input id="city-chooser-form-komsomolsk-on-amur" type="radio" name="city-chooser-form-name" value="komsomolsk-on-amur">
           <label for="city-chooser-form-komsomolsk-on-amur">Комсомольск-на-Амуре</label>
         </div>
+
+        <button class="modal__close-button" type="button">
+          <span class="visually-hidden">Закрыть окно</span>
+
+          <svg width="14" height="14" viewBox="0 0 16 16">
+            <use xlink:href="img/sprite.svg#icon-button-close"></use>
+          </svg>
+        </button>
       </div>
     </form>
 

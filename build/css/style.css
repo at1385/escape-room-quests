@@ -1099,7 +1099,7 @@ a {
   margin-right: 2.2%;
 }
 
-.catalog__item--hit::before {
+.catalog__item--hit a::before {
   content: "Хит";
   position: absolute;
   top: 15px;
@@ -1132,6 +1132,16 @@ a {
   color: rgba(229, 229, 229, 0.8);
   word-wrap: break-word;
   font-feature-settings: "pnum" on, "lnum" on;
+}
+
+.catalog__item a:focus {
+  outline: 1px dotted rgba(255, 255, 255, 0.7);
+  outline-offset: -1px;
+}
+
+.catalog__item a:active {
+  outline: none;
+  opacity: 0.5;
 }
 
 .catalog__item h2 {
@@ -1247,6 +1257,8 @@ a {
   }
   .catalog__item {
     width: 100%;
+    height: auto;
+    min-height: 232px;
     margin-bottom: 16px;
   }
   .catalog__item:not(:nth-child(even)) {
@@ -2447,7 +2459,7 @@ a {
 
 .question-form__field label {
   position: absolute;
-  top: 28px;
+  top: -8px;
   left: 20px;
   padding: 0 5px;
   font-size: 12px;
@@ -2491,7 +2503,7 @@ a {
 
 .question-form__field textarea {
   height: 120px;
-  resize: vertical;
+  resize: none;
 }
 
 .question-form__field--valid input,
@@ -2545,6 +2557,10 @@ a {
   color: #e5e5e5;
   vertical-align: top;
   background-color: transparent;
+}
+
+.question-form__field--checkbox {
+  margin-bottom: 0;
 }
 
 .question-form__field--checkbox input {
@@ -2612,6 +2628,10 @@ a {
   max-width: 100%;
 }
 
+.question-form__field-wrapper {
+  position: relative;
+}
+
 .question-form__email-error {
   position: absolute;
   bottom: -18px;
@@ -2637,9 +2657,6 @@ a {
 }
 
 @media (max-width: 767px) {
-  .question-form__field label {
-    top: 49px;
-  }
   .question-form__field--checkbox label {
     top: 0;
   }

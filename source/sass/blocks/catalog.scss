@@ -142,7 +142,7 @@
   overflow: hidden;
 
   &--hit {
-    &::before {
+    a::before {
       content: "Хит";
       position: absolute;
       top: 15px;
@@ -182,6 +182,16 @@
     color: rgba($light, 0.8);
     word-wrap: break-word;
     font-feature-settings: "pnum" on, "lnum" on;
+
+    &:focus {
+      outline: 1px dotted rgba($lightest, 0.7);
+      outline-offset: -1px;
+    }
+
+    &:active {
+      outline: none;
+      opacity: 0.5;
+    }
   }
 
   h2 {
@@ -322,6 +332,8 @@
 
   .catalog__item {
     width: 100%;
+    height: auto;
+    min-height: 232px;
     margin-bottom: 16px;
 
     &:not(:nth-child(even)) {

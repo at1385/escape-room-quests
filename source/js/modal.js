@@ -40,6 +40,9 @@
         modal.classList.remove('modal--hidden');
         overlay.classList.remove('overlay--hidden');
 
+        modal.setAttribute('tabindex', '0');
+        modal.focus();
+
         if (!existVerticalScroll()) {
           body.classList.add('body-lock');
         } else if (!body.classList.contains('body-lock')) {
@@ -54,6 +57,8 @@
     const closeModal = () => {
       modal.classList.add('modal--hidden');
       overlay.classList.add('overlay--hidden');
+
+      modal.removeAttribute('tabindex');
 
       if (!existVerticalScroll()) {
         body.classList.remove('body-lock');
