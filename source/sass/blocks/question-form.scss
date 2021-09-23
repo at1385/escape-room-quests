@@ -20,7 +20,7 @@
 
   label {
     position: absolute;
-    top: 28px;
+    top: -8px;
     left: 20px;
     padding: 0 5px;
 
@@ -212,6 +212,10 @@
   }
 }
 
+.question-form__field-wrapper {
+  position: relative;
+}
+
 .question-form__email-error {
   position: absolute;
   bottom: -18px;
@@ -241,10 +245,6 @@
 
 @media (max-width: $mobile-max-width) {
   .question-form__field {
-    label {
-      top: 49px;
-    }
-
     &--checkbox {
       label {
         top: 0;

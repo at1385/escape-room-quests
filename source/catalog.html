@@ -546,14 +546,20 @@
 
         <div class="question-form__field question-form__field--username question-form__field--userdata">
           <p>Чтобы мы смогли обращаться к вам, оставьте&nbsp;ваше имя</p>
-          <input id="question-form-username" type="text" name="question-form-username" placeholder="Имя" autocomplete="off" required>
-          <label for="question-form-username">Имя</label>
+
+          <div class="question-form__field-wrapper">
+            <input id="question-form-username" type="text" name="question-form-username" placeholder="Имя" autocomplete="off" required>
+            <label for="question-form-username">Имя</label>
+          </div>
         </div>
 
         <div class="question-form__field question-form__field--user-email question-form__field--userdata">
           <p>Чтобы вы получили ответ, оставьте ваш e&#8209;mail</p>
-          <input id="question-form-user-email" type="email" name="question-form-user-email" placeholder="E-mail" autocomplete="off" required>
-          <label for="question-form-user-email">E-mail</label>
+
+          <div class="question-form__field-wrapper">
+            <input id="question-form-user-email" type="email" name="question-form-user-email" placeholder="E-mail" autocomplete="off" required>
+            <label for="question-form-user-email">E-mail</label>
+          </div>
 
           <div class="question-form__email-error">
             <p>Введён некорректный e-mail, попробуйте заново</p>
